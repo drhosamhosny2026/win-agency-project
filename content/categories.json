@@ -1,0 +1,40 @@
+{
+  "work": [
+    {
+      "id": "campaign",
+      "label": { "en": "Campaign", "ar": "حملة" },
+      "description": { "en": "National days, brand campaigns, and large-scale marketing activations." }
+    },
+    {
+      "id": "event",
+      "label": { "en": "Event", "ar": "فعالية" },
+      "description": { "en": "Concerts, experiences, and on-ground event production." }
+    },
+    {
+      "id": "music",
+      "label": { "en": "Music", "ar": "موسيقى" },
+      "description": { "en": "Songs, sonic branding, composition, and artist collaborations." }
+    },
+    {
+      "id": "sponsorship",
+      "label": { "en": "Sponsorship", "ar": "رعاية" },
+      "description": { "en": "Sponsorship management and partnership activations." }
+    },
+    {
+      "id": "marketing",
+      "label": { "en": "Marketing", "ar": "تسويق" },
+      "description": { "en": "Advertising and integrated creative campaigns." }
+    },
+    {
+      "id": "award-feature",
+      "label": { "en": "Award", "ar": "جائزة" },
+      "description": { "en": "Recognized award-winning work featured in the company profile." }
+    }
+  ],
+  "services": [
+    "event-management",
+    "strategic-partnerships",
+    "music-production",
+    "marketing-creativity"
+  ]
+}

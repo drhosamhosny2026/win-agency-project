@@ -1,0 +1,76 @@
+{
+  "description": "Official / Commons logo sources for fetch-official-logos.mjs",
+  "items": [
+    {
+      "id": "kafd",
+      "name": "KAFD",
+      "commonsFile": "File:King Abdullah Financial District logo.svg",
+      "fallbackCommons": "File:KAFD logo.svg",
+      "webSearch": "KAFD King Abdullah Financial District logo svg"
+    },
+    {
+      "id": "neom",
+      "name": "NEOM",
+      "commonsFile": "File:NEOM Text Logo.svg"
+    },
+    {
+      "id": "mbc",
+      "name": "MBC",
+      "commonsFile": "File:MBC Group Logo.svg"
+    },
+    {
+      "id": "gea",
+      "name": "GEA",
+      "commonsFile": "File:General Entertainment Authority Logo.svg"
+    },
+    {
+      "id": "rega",
+      "name": "REGA",
+      "commonsFile": "File:Real Estate General Authority logo.svg",
+      "fallbackCommons": "File:Real Estate General Authority Logo.svg"
+    },
+    {
+      "id": "half-million",
+      "name": "Half Million",
+      "commonsFile": "File:Half Million logo in black.png",
+      "format": "png"
+    },
+    {
+      "id": "jahez",
+      "name": "Jahez",
+      "commonsFile": "File:جاهز - Jahez.svg"
+    },
+    {
+      "id": "tawuniya",
+      "name": "Tawuniya",
+      "directUrl": "https://www.tawuniya.com/-/media/tawuniya/logo/tawuniya-logo.svg"
+    },
+    {
+      "id": "mahally",
+      "name": "Mahally",
+      "directUrl": "https://mahally.sa/logo.svg"
+    },
+    {
+      "id": "mos",
+      "name": "MOS",
+      "commonsFile": "File:General Sport Authority Logo.svg",
+      "fallbackCommons": "File:Ministry of Sport (Saudi Arabia) Logo.png",
+      "format": "png"
+    },
+    {
+      "id": "cardinal",
+      "name": "Cardinal",
+      "directUrl": "https://www.cardinalsa.com/wp-content/uploads/2023/03/cardinal-logo.svg"
+    },
+    {
+      "id": "mdlbeast",
+      "name": "MDLBEAST",
+      "directUrl": "https://mdlbeast.com/wp-content/themes/mdlbeast/assets/images/logo.svg"
+    },
+    {
+      "id": "riyadh-season",
+      "name": "Riyadh Season",
+      "commonsFile": "File:Riyadh Season Logo.svg"
+    }
+  ]
+}

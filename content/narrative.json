@@ -1,0 +1,31 @@
+{
+  "objectives": {
+    "en": [
+      "Drive growth in entertainment, arts, events, and marketing.",
+      "Produce innovative content that bridges idea and execution.",
+      "Expand high-value partnerships across public and private sectors."
+    ],
+    "ar": [
+      "تحفيز النمو في مجالات الترفيه والفنون والفعاليات والتسويق.",
+      "إنتاج محتوى إبداعي مبتكر يجمع بين الفكرة والتنفيذ المحترف.",
+      "توسيع شبكة الشراكات النوعية في القطاعين العام والخاص."
+    ],
+    "pdfPages": [4, 5]
+  },
+  "vision": {
+    "en": "Our goal is to become the top partner providing comprehensive creative solutions in event entertainment, marketing, and audio-visual production.",
+    "ar": "أن نكون الشريك الأول للحلول الإبداعية المتكاملة في مجالات الفعاليات والتسويق والإنتاج المرئي والمسموع."
+  },
+  "mission": {
+    "en": "To be the primary intersection of creativity and partnership and the destination for brands seeking integrated solutions in events, marketing, production, and music.",
+    "ar": "أن نكون نقطة الالتقاء الأولى بين الإبداع والشراكة والوجهة الأولى للعلامات التجارية الباحثة عن حلول متكاملة في الفعاليات والتسويق والإنتاج والموسيقى."
+  },
+  "portfolioSection": {
+    "title": { "en": "Previous Work", "ar": "أعمالنا السابقة" },
+    "pdfPages": [10]
+  },
+  "clientsSection": {
+    "title": { "en": "Our Clients", "ar": null },
+    "pdfPages": [9]
+  }
+}

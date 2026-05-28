@@ -1,0 +1,23 @@
+{
+  "homepage": [
+    { "id": "navbar", "component": "Navbar" },
+    { "id": "hero", "component": "Hero", "contentRefs": ["agency.tagline", "agency.about"] },
+    { "id": "clients", "component": "Clients", "contentRefs": ["clients.manifest"] },
+    { "id": "services", "component": "Services", "contentRefs": ["services.groups"] },
+    { "id": "works", "component": "Works", "contentRefs": ["work.manifest"] },
+    { "id": "award", "component": "Award", "contentRefs": ["awards.manifest"] },
+    { "id": "footer", "component": "Footer", "contentRefs": ["contact", "agency.tagline"] }
+  ],
+  "pdfCoverage": {
+    "cover": [1, 2],
+    "about": [3, 4],
+    "narrative": [5, 6],
+    "services": [7, 8],
+    "clients": [9],
+    "portfolioIntro": [10],
+    "award": [11],
+    "work": [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26],
+    "closing": [27],
+    "contact": [28]
+  }
+}

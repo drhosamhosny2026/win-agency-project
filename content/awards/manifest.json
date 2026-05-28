@@ -1,0 +1,35 @@
+{
+  "sectionTitle": {
+    "en": "Recognition",
+    "ar": "جائزة التميز الإعلامي"
+  },
+  "items": [
+    {
+      "id": "award-media-excellence-2024",
+      "title": {
+        "en": "Media Excellence Award 2024",
+        "ar": "جائزة التميز الإعلامي"
+      },
+      "year": 2024,
+      "issuer": {
+        "en": "Saudi Ministry of Media",
+        "ar": "وزارة الإعلام"
+      },
+      "clientId": "half-million",
+      "category": {
+        "en": "Singing — First Place, National Competition",
+        "ar": "مسار الغناء — المركز الأول، المسابقة الوطنية"
+      },
+      "description": {
+        "en": "First place in the singing category of the National Competition awarded by the Ministry of Media. Our client Half Million was honored for producing the song dedicated to the late Badr bin Mohsen, composed and performed by artist Mohammed Abdo, following a successful partnership with WIN.",
+        "ar": "حققنا المركز الأول في مسار الغناء ضمن المسابقة الوطنية لعام 2024 الممنوحة من وزارة الإعلام، وتم تكريم عميلنا «هاف مليون» لإنتاج أغنية الراحل بدر بن محسن ولحنها وأداها الفنان محمد عبده، وذلك نتيجة شراكة ناجحة معنا."
+      },
+      "artists": ["Badr bin Mohsen (dedicated)", "Mohammed Abdo"],
+      "pdfPages": [11],
+      "mediaIds": [],
+      "assetsPath": "/assets/awards/media-excellence-2024",
+      "relatedWorkIds": [],
+      "featured": true
+    }
+  ]
+}

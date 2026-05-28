@@ -1,0 +1,28 @@
+<svg width="1200" height="500" viewBox="0 0 1200 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <text x="120" y="220"
+        font-family="Arial, sans-serif"
+        font-size="120"
+        font-weight="700"
+        fill="black">
+    محلي
+  </text>
+
+  <text x="120" y="340"
+        font-family="Arial, sans-serif"
+        font-size="100"
+        font-weight="700"
+        fill="black">
+    mahally
+  </text>
+
+  <rect x="700" y="90"
+        width="320"
+        height="320"
+        rx="60"
+        stroke="black"
+        stroke-width="28"
+        fill="none"/>
+
+  <path d="M860 170C812 170 775 207 775 255C775 322 860 395 860 395C860 395 945 322 945 255C945 207 908 170 860 170ZM860 295C838 295 820 277 820 255C820 233 838 215 860 215C882 215 900 233 900 255C900 277 882 295 860 295Z"
+        fill="black"/>
+</svg>

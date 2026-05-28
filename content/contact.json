@@ -1,0 +1,17 @@
+{
+  "location": {
+    "en": "Riyadh, Saudi Arabia",
+    "ar": "السعودية | الرياض"
+  },
+  "email": "Info@iwin-sa.com",
+  "phone": {
+    "display": "+966 59 438 1935",
+    "e164": "+966594381935",
+    "tel": "tel:+966594381935"
+  },
+  "closingLine": {
+    "en": "Thank you",
+    "ar": null
+  },
+  "pdfPages": [27, 28]
+}

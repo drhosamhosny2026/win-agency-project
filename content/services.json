@@ -1,0 +1,61 @@
+{
+  "sectionTitle": { "en": "Our Services", "ar": "خدماتنا" },
+  "pdfPages": [6, 7],
+  "groups": [
+    {
+      "id": "event-management",
+      "title": {
+        "en": "Event Management",
+        "ar": "إدارة وتنظيم الفعاليات"
+      },
+      "items": [
+        { "en": "Exhibitions & conferences", "ar": "تنظيم المعارض والمؤتمرات" },
+        { "en": "Experiential activations", "ar": "خلق تجارب تفاعلية" },
+        { "en": "On-ground execution", "ar": "إدارة الحضور والتنفيذ" },
+        { "en": "Visitor journey design", "ar": "تجربة زائر احترافية" }
+      ],
+      "pdfPages": [6, 7]
+    },
+    {
+      "id": "strategic-partnerships",
+      "title": {
+        "en": "Strategic Partnerships",
+        "ar": "الشراكات والعقود الاستراتيجية"
+      },
+      "items": [
+        { "en": "Brand connections", "ar": "ربط العلامات التجارية" },
+        { "en": "Long-term relationship management", "ar": "إدارة علاقات طويلة الأمد" },
+        { "en": "Partnership monetization", "ar": "تحويل العلاقات إلى قيمة" }
+      ],
+      "pdfPages": [6, 7]
+    },
+    {
+      "id": "music-production",
+      "title": {
+        "en": "Music Production",
+        "ar": "صناعة الموسيقى"
+      },
+      "items": [
+        { "en": "Writing & composing", "ar": "كتابة وتلحين وتوزيع" },
+        { "en": "Arrangement & production", "ar": "إنتاج أعمال فنية" },
+        { "en": "Artist collaborations", "ar": null },
+        { "en": "Brand sonic identity", "ar": "هوية موسيقية للعلامات" }
+      ],
+      "pdfPages": [6, 7]
+    },
+    {
+      "id": "marketing-creativity",
+      "title": {
+        "en": "Marketing & Creativity",
+        "ar": "التسويق والإبداع"
+      },
+      "items": [
+        { "en": "Campaign concepts", "ar": "توليد أفكار حملات قوية" },
+        { "en": "Audio & visual production", "ar": "إنتاج محتوى مرئي ومسموع" },
+        { "en": "Social media strategy", "ar": "تطوير استراتيجيات الظهور" },
+        { "en": "Large-scale campaign management", "ar": "إدارة الحملات الرقمية" }
+      ],
+      "pdfPages": [6, 7]
+    }
+  ]
+}

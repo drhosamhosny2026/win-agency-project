@@ -1,0 +1,179 @@
+{
+  "sectionTitle": {
+    "en": "Previous Work",
+    "ar": "أعمالنا السابقة"
+  },
+  "pdfPages": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26],
+  "displayOrder": [
+    "work-saudi-national-day-half-million",
+    "work-kafd-concert",
+    "work-eid-song",
+    "work-sonic-branding-half-million",
+    "work-saudi-national-day-rega",
+    "work-saudi-national-day-mos",
+    "work-advertising-campaign",
+    "work-sign-x-falcons",
+    "work-event-gea",
+    "work-event-half-million"
+  ],
+  "items": [
+    {
+      "id": "work-saudi-national-day-half-million",
+      "title": { "en": "Saudi National Day", "ar": null },
+      "clientId": "half-million",
+      "category": "campaign",
+      "categories": ["campaign", "marketing"],
+      "serviceTags": ["marketing-creativity"],
+      "pdfPages": [12, 13],
+      "slides": [
+        { "pdfPage": 12, "assetKey": "slide-01" },
+        { "pdfPage": 13, "assetKey": "slide-02" }
+      ],
+      "mediaIds": ["yt-snd-half-million"],
+      "featured": true,
+      "assetsPath": "/assets/projects/saudi-national-day-half-million"
+    },
+    {
+      "id": "work-kafd-concert",
+      "title": { "en": "Concert", "ar": null },
+      "displayTitle": { "en": "KAFD Concert", "ar": null },
+      "clientId": "kafd",
+      "category": "event",
+      "categories": ["event"],
+      "serviceTags": ["event-management"],
+      "pdfPages": [14, 15, 16],
+      "slides": [
+        { "pdfPage": 14, "assetKey": "slide-01" },
+        { "pdfPage": 15, "assetKey": "slide-02" },
+        { "pdfPage": 16, "assetKey": "slide-03" }
+      ],
+      "mediaIds": ["yt-kafd-concert"],
+      "featured": true,
+      "assetsPath": "/assets/projects/kafd-concert"
+    },
+    {
+      "id": "work-eid-song",
+      "title": { "en": "EID Song", "ar": null },
+      "clientId": null,
+      "category": "music",
+      "categories": ["music"],
+      "serviceTags": ["music-production"],
+      "pdfPages": [17],
+      "slides": [{ "pdfPage": 17, "assetKey": "slide-01" }],
+      "mediaIds": ["ig-eid-song"],
+      "featured": true,
+      "assetsPath": "/assets/projects/eid-song"
+    },
+    {
+      "id": "work-sonic-branding-half-million",
+      "title": { "en": "Sonic Branding", "ar": null },
+      "clientId": "half-million",
+      "category": "music",
+      "categories": ["music", "marketing"],
+      "serviceTags": ["music-production", "marketing-creativity"],
+      "pdfPages": [18],
+      "slides": [{ "pdfPage": 18, "assetKey": "slide-01" }],
+      "mediaIds": ["yt-sonic-branding-half-million"],
+      "featured": true,
+      "assetsPath": "/assets/projects/sonic-branding-half-million"
+    },
+    {
+      "id": "work-saudi-national-day-rega",
+      "title": { "en": "Saudi National Day", "ar": null },
+      "clientId": "rega",
+      "category": "campaign",
+      "categories": ["campaign", "marketing"],
+      "serviceTags": ["marketing-creativity"],
+      "pdfPages": [19],
+      "slides": [{ "pdfPage": 19, "assetKey": "slide-01" }],
+      "mediaIds": ["yt-snd-rega"],
+      "featured": true,
+      "assetsPath": "/assets/projects/saudi-national-day-rega"
+    },
+    {
+      "id": "work-saudi-national-day-mos",
+      "title": { "en": "Saudi National Day", "ar": null },
+      "clientId": "mos",
+      "category": "campaign",
+      "categories": ["campaign", "marketing"],
+      "serviceTags": ["marketing-creativity"],
+      "pdfPages": [20],
+      "slides": [{ "pdfPage": 20, "assetKey": "slide-01" }],
+      "mediaIds": ["yt-snd-mos", "x-snd-mos"],
+      "featured": true,
+      "assetsPath": "/assets/projects/saudi-national-day-mos"
+    },
+    {
+      "id": "work-advertising-campaign",
+      "title": { "en": "Advertising Campaign", "ar": null },
+      "clientId": null,
+      "category": "marketing",
+      "categories": ["marketing", "campaign"],
+      "serviceTags": ["marketing-creativity"],
+      "pdfPages": [21, 22, 23],
+      "slides": [
+        { "pdfPage": 21, "assetKey": "slide-01" },
+        { "pdfPage": 22, "assetKey": "slide-02" },
+        { "pdfPage": 23, "assetKey": "slide-03" }
+      ],
+      "mediaIds": ["yt-advertising-campaign"],
+      "featured": true,
+      "assetsPath": "/assets/projects/advertising-campaign"
+    },
+    {
+      "id": "work-sign-x-falcons",
+      "title": { "en": "Sign x Falcons", "ar": null },
+      "subtitle": { "en": "Sponsorship Management", "ar": null },
+      "partnerIds": ["falcons"],
+      "clientId": null,
+      "category": "sponsorship",
+      "categories": ["sponsorship"],
+      "serviceTags": ["strategic-partnerships", "event-management"],
+      "pdfPages": [24],
+      "slides": [
+        { "pdfPage": 24, "assetKey": "slide-01", "notes": "PDF repeats Sponsorship Management label twice on this spread" },
+        { "pdfPage": 24, "assetKey": "slide-02", "notes": "Second visual on same PDF page" }
+      ],
+      "mediaIds": [],
+      "featured": true,
+      "assetsPath": "/assets/projects/sign-x-falcons"
+    },
+    {
+      "id": "work-event-gea",
+      "title": { "en": "Event", "ar": null },
+      "displayTitle": { "en": "Event — GEA", "ar": null },
+      "clientId": "gea",
+      "category": "event",
+      "categories": ["event"],
+      "serviceTags": ["event-management"],
+      "pdfPages": [25],
+      "slides": [{ "pdfPage": 25, "assetKey": "slide-01" }],
+      "mediaIds": ["x-event-gea"],
+      "featured": true,
+      "assetsPath": "/assets/projects/event-gea"
+    },
+    {
+      "id": "work-event-half-million",
+      "title": { "en": "Event", "ar": null },
+      "displayTitle": { "en": "Event — Half Million", "ar": null },
+      "clientId": "half-million",
+      "category": "event",
+      "categories": ["event"],
+      "serviceTags": ["event-management"],
+      "pdfPages": [26],
+      "slides": [{ "pdfPage": 26, "assetKey": "slide-01" }],
+      "mediaIds": ["linkedin-event-half-million"],
+      "featured": true,
+      "assetsPath": "/assets/projects/event-half-million"
+    }
+  ],
+  "partners": [
+    {
+      "id": "falcons",
+      "name": "Falcons",
+      "slug": "falcons",
+      "logo": "/assets/partners/falcons/logo.svg",
+      "relatedWorkIds": ["work-sign-x-falcons"]
+    }
+  ]
+}

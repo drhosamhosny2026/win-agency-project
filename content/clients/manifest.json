@@ -1,0 +1,203 @@
+{
+  "sectionTitle": {
+    "en": "Our Clients",
+    "ar": null
+  },
+  "pdfPages": [
+    9
+  ],
+  "logoGridNote": "Page 9 is a logo-only spread in the PDF (no text labels). Each entry below maps to one logo slot; export logos from page 9 into the listed logo path.",
+  "displayOrder": [
+    "kafd",
+    "half-million",
+    "rega",
+    "sta",
+    "ahli",
+    "mbc",
+    "mos",
+    "gea",
+    "neom",
+    "sign",
+    "cardial",
+    "tawuniya",
+    "mahally",
+    "jahez"
+  ],
+  "items": [
+    {
+      "id": "kafd",
+      "name": "KAFD",
+      "slug": "kafd",
+      "logo": "/assets/clients/kafd/logo.png",
+      "logoFallback": "/assets/clients/kafd/logo.png",
+      "sources": ["clients-slide", "portfolio"],
+      "pdfPages": [9],
+      "portfolioWorkIds": ["work-kafd-concert"],
+      "logoWidth": 40,
+      "logoHeight": 80
+    },
+    {
+      "id": "half-million",
+      "name": "Half Million",
+      "slug": "half-million",
+      "logo": "/assets/clients/half-million/logo.png",
+      "logoFallback": "/assets/clients/half-million/logo.png",
+      "sources": ["clients-slide", "portfolio", "award"],
+      "pdfPages": [9],
+      "portfolioWorkIds": [
+        "work-saudi-national-day-half-million",
+        "work-sonic-branding-half-million",
+        "work-event-half-million"
+      ],
+      "awardIds": ["award-media-excellence-2024"],
+      "logoWidth": 175,
+      "logoHeight": 80
+    },
+    {
+      "id": "rega",
+      "name": "Ministry of Environment",
+      "slug": "rega",
+      "logo": "/assets/clients/moewaa/mewa-logo.svg",
+      "logoFallback": "/assets/clients/moewaa/mewa-logo.svg",
+      "sources": ["clients-slide", "portfolio"],
+      "pdfPages": [9],
+      "portfolioWorkIds": ["work-saudi-national-day-rega"],
+      "logoWidth": 313,
+      "logoHeight": 80
+    },
+    {
+      "id": "sta",
+      "name": "Saudi Tourism Authority",
+      "slug": "sta",
+      "logo": "/assets/clients/sta/logo.png",
+      "logoFallback": "/assets/clients/sta/logo.png",
+      "sources": ["clients-slide"],
+      "pdfPages": [9],
+      "logoWidth": 285,
+      "logoHeight": 80
+    },
+    {
+      "id": "ahli",
+      "name": "Al Ahli Saudi Club",
+      "slug": "ahli",
+      "logo": "/assets/clients/ahli/logo.webp",
+      "logoFallback": "/assets/clients/ahli/logo.webp",
+      "sources": ["clients-slide"],
+      "pdfPages": [9],
+      "logoWidth": 80,
+      "logoHeight": 80
+    },
+    {
+      "id": "mbc",
+      "name": "MBC",
+      "slug": "mbc",
+      "logo": "/assets/clients/mbc/logo.svg",
+      "logoFallback": "/assets/clients/mbc/logo.svg",
+      "sources": ["clients-slide"],
+      "pdfPages": [9],
+      "logoWidth": 190,
+      "logoHeight": 80
+    },
+    {
+      "id": "mos",
+      "name": "Ministry of Sport",
+      "slug": "mos",
+      "logo": "/assets/clients/mos/logo.svg",
+      "logoFallback": "/assets/clients/mos/logo.svg",
+      "sources": ["clients-slide", "portfolio"],
+      "pdfPages": [9],
+      "portfolioWorkIds": ["work-saudi-national-day-mos"],
+      "logoWidth": 252,
+      "logoHeight": 80
+    },
+    {
+      "id": "gea",
+      "name": "General Entertainment Authority",
+      "slug": "gea",
+      "logo": "/assets/clients/gea/logo.svg",
+      "logoFallback": "/assets/clients/gea/logo.svg",
+      "sources": ["clients-slide", "portfolio"],
+      "pdfPages": [9],
+      "portfolioWorkIds": ["work-event-gea"],
+      "logoWidth": 145,
+      "logoHeight": 80
+    },
+    {
+      "id": "neom",
+      "name": "NEOM",
+      "slug": "neom",
+      "logo": "/assets/clients/neom/logo.svg",
+      "logoFallback": "/assets/clients/neom/logo.svg",
+      "sources": ["clients-slide"],
+      "pdfPages": [9],
+      "logoWidth": 533,
+      "logoHeight": 80
+    },
+    {
+      "id": "sign",
+      "name": "Sign",
+      "slug": "sign",
+      "logo": "/assets/clients/sign/logo.webp",
+      "logoFallback": "/assets/clients/sign/logo.webp",
+      "sources": ["clients-slide"],
+      "pdfPages": [9],
+      "logoWidth": 104,
+      "logoHeight": 80
+    },
+    {
+      "id": "cardial",
+      "name": "Cardial",
+      "slug": "cardial",
+      "logo": "/assets/clients/cardial/logo.png",
+      "logoFallback": "/assets/clients/cardial/logo.png",
+      "sources": ["clients-slide"],
+      "pdfPages": [9],
+      "logoWidth": 159,
+      "logoHeight": 80
+    },
+    {
+      "id": "tawuniya",
+      "name": "Tawuniya",
+      "slug": "tawuniya",
+      "logo": "/assets/clients/tawuniya/logo.svg",
+      "logoFallback": "/assets/clients/tawuniya/logo.svg",
+      "sources": ["clients-slide"],
+      "pdfPages": [9],
+      "logoWidth": 261,
+      "logoHeight": 80
+    },
+    {
+      "id": "mahally",
+      "name": "Mahally",
+      "slug": "mahally",
+      "logo": "/assets/clients/mahally/logo.svg",
+      "logoFallback": "/assets/clients/mahally/logo.svg",
+      "sources": ["clients-slide"],
+      "pdfPages": [9],
+      "logoWidth": 192,
+      "logoHeight": 80
+    },
+    {
+      "id": "jahez",
+      "name": "Jahez",
+      "slug": "jahez",
+      "logo": "/assets/clients/jahez/logo.svg",
+      "logoFallback": "/assets/clients/jahez/logo.svg",
+      "sources": ["clients-slide"],
+      "pdfPages": [9],
+      "logoWidth": 233,
+      "logoHeight": 80
+    },
+    {
+      "id": "mdlbeast",
+      "name": "MDLBEAST",
+      "slug": "mdlbeast",
+      "logo": "/assets/clients/mdlbeast/logo.png",
+      "logoFallback": "/assets/clients/mdlbeast/logo.png",
+      "sources": ["clients-slide"],
+      "pdfPages": [9],
+      "logoWidth": 250,
+      "logoHeight": 80
+    }
+  ]
+}

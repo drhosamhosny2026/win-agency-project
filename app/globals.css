@@ -1,26 +1,131 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f5f2ed;
+  --foreground: #111111;
+  --gold: #C6A77D;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Lenis owns scroll behaviour — removed html scroll-behavior: smooth to avoid conflict */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.04em;
+}
+
+::selection {
+  background: #111111;
+  color: #f5f2ed;
+}
+
+/* —— Client logo marquee (luxury, calm) —— */
+@keyframes marquee-luxury {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.client-marquee-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  /* Slowed to 65 s for a more unhurried, premium pace */
+  animation: marquee-luxury 65s linear infinite;
+  will-change: transform;
+}
+
+.client-marquee-viewport:hover .client-marquee-track {
+  animation-play-state: paused;
+}
+
+/* —— Video modal animations —— */
+@keyframes modal-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.video-modal-overlay {
+  will-change: opacity;
+  animation: modal-fade 0.25s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.video-modal-content {
+  will-change: opacity;
+  animation: modal-fade 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* —— Mobile nav overlay items (staggered entrance) ————————————————————— */
+
+/* Default state shared by all animated items */
+.nav-mobile-item,
+.nav-mobile-footer {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.3s ease;
+  /* No delay on close so the overlay collapses instantly */
+  transition-delay: 0ms;
+}
+
+.nav-mobile-footer {
+  transform: translateY(16px);
+}
+
+/* When the overlay is open: stagger each item in */
+.nav-mobile-open .nav-mobile-item:nth-child(1) { transition-delay: 0ms; }
+.nav-mobile-open .nav-mobile-item:nth-child(2) { transition-delay: 70ms; }
+.nav-mobile-open .nav-mobile-item:nth-child(3) { transition-delay: 140ms; }
+.nav-mobile-open .nav-mobile-item:nth-child(4) { transition-delay: 210ms; }
+.nav-mobile-open .nav-mobile-footer             { transition-delay: 280ms; }
+
+.nav-mobile-open .nav-mobile-item,
+.nav-mobile-open .nav-mobile-footer {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* —— Reduced motion: disable all JS-driven and CSS animations —— */
+@media (prefers-reduced-motion: reduce) {
+  /* Restore native smooth scrolling as fallback */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .client-marquee-track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 2rem 3rem;
+    padding-inline: 1.5rem;
+  }
+
+  .client-marquee-duplicate {
+    display: none;
+  }
+
+  .video-modal-overlay,
+  .video-modal-content {
+    animation: none;
+  }
 }

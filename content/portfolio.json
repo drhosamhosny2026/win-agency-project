@@ -1,0 +1,44 @@
+{
+  "$schema": "./portfolio.schema.json",
+  "description": "Unified site portfolio bundle — clients, logos, work, awards, media. Source of truth for UI bindings.",
+  "source": "win-agency-file.pdf (Company Profile 2026)",
+  "clientLogos": {
+    "displayOrder": [
+      "kafd",
+      "half-million",
+      "rega",
+      "sta",
+      "ahli",
+      "mbc",
+      "mos",
+      "gea",
+      "neom",
+      "sign",
+      "cardial",
+      "tawuniya",
+      "mahally",
+      "jahez"
+    ],
+    "items": [
+      { "id": "kafd",          "name": "KAFD",                       "logo": "/assets/clients/kafd/logo.png",          "width": 40,  "height": 80 },
+      { "id": "half-million",  "name": "Half Million",               "logo": "/assets/clients/half-million/logo.png",  "width": 175, "height": 80 },
+      { "id": "rega",          "name": "Ministry of Environment",  "logo": "/assets/clients/moewaa/mewa-logo.svg",   "width": 313, "height": 80 },
+      { "id": "sta",           "name": "Saudi Tourism Authority",    "logo": "/assets/clients/sta/logo.png",           "width": 285, "height": 80 },
+      { "id": "ahli",          "name": "Al Ahli Saudi Club",         "logo": "/assets/clients/ahli/logo.webp",         "width": 80,  "height": 80 },
+      { "id": "mbc",           "name": "MBC",                        "logo": "/assets/clients/mbc/logo.svg",           "width": 190, "height": 80 },
+      { "id": "mos",           "name": "Ministry of Sport",          "logo": "/assets/clients/mos/logo.svg",           "width": 252, "height": 80 },
+      { "id": "gea",           "name": "General Entertainment Authority", "logo": "/assets/clients/gea/logo.svg",      "width": 145, "height": 80 },
+      { "id": "neom",          "name": "NEOM",                       "logo": "/assets/clients/neom/logo.svg",          "width": 533, "height": 80 },
+      { "id": "sign",          "name": "Sign",                       "logo": "/assets/clients/sign/logo.webp",         "width": 104, "height": 80 },
+      { "id": "cardial",       "name": "Cardial",                    "logo": "/assets/clients/cardial/logo.png",       "width": 159, "height": 80 },
+      { "id": "tawuniya",      "name": "Tawuniya",                   "logo": "/assets/clients/tawuniya/logo.svg",      "width": 261, "height": 80 },
+      { "id": "mahally",       "name": "Mahally",                    "logo": "/assets/clients/mahally/logo.svg",       "width": 192, "height": 80 },
+      { "id": "jahez",         "name": "Jahez",                      "logo": "/assets/clients/jahez/logo.svg",         "width": 233, "height": 80 }
+    ],
+    "generatedAt": "2026-05-28T03:13:19.041Z"
+  },
+  "clientsRef": "content/clients/manifest.json",
+  "workRef": "content/work/manifest.json",
+  "awardsRef": "content/awards/manifest.json",
+  "mediaRef": "content/media/registry.json"
+}

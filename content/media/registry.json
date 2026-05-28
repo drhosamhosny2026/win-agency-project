@@ -1,0 +1,111 @@
+{
+  "$schema": "./registry.schema.json",
+  "description": "Every external media URL embedded in win-agency-file.pdf — zero omissions.",
+  "extractedAt": "2026-05-28",
+  "items": [
+    {
+      "id": "yt-snd-half-million",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=r55fNz-73O4",
+      "youtubeId": "r55fNz-73O4",
+      "label": "Saudi National Day — Half Million",
+      "pdfPage": 12,
+      "assignedTo": ["work-saudi-national-day-half-million"]
+    },
+    {
+      "id": "yt-kafd-concert",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=y3DmY6bIu4w",
+      "youtubeId": "y3DmY6bIu4w",
+      "label": "KAFD Concert",
+      "pdfPage": 14,
+      "assignedTo": ["work-kafd-concert"]
+    },
+    {
+      "id": "ig-eid-song",
+      "platform": "instagram",
+      "url": "https://www.instagram.com/reel/DFjAEbHoVrE/",
+      "urlCanonical": "https://www.instagram.com/reel/DFjAEbHoVrE/?igsh=MXZ3dzlkaTRzamFkcQ%3D%3D",
+      "label": "EID Song",
+      "pdfPage": 17,
+      "assignedTo": ["work-eid-song"]
+    },
+    {
+      "id": "yt-sonic-branding-half-million",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=gRuc1m90jck",
+      "youtubeId": "gRuc1m90jck",
+      "label": "Sonic Branding — Half Million",
+      "pdfPage": 18,
+      "assignedTo": ["work-sonic-branding-half-million"]
+    },
+    {
+      "id": "yt-snd-rega",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=HKhbA936FcY",
+      "youtubeId": "HKhbA936FcY",
+      "label": "Saudi National Day — REGA",
+      "pdfPage": 19,
+      "assignedTo": ["work-saudi-national-day-rega"]
+    },
+    {
+      "id": "yt-snd-mos",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=9z2KLeBiloQ",
+      "youtubeId": "9z2KLeBiloQ",
+      "label": "Saudi National Day — MOS",
+      "pdfPage": 20,
+      "assignedTo": ["work-saudi-national-day-mos"]
+    },
+    {
+      "id": "x-snd-mos",
+      "platform": "x",
+      "url": "https://x.com/mosgovsa/status/2024559617225691574",
+      "urlCanonical": "https://x.com/mosgovsa/status/2024559617225691574?s=46&t=8SSo742agsBk40o_v3jBLA",
+      "label": "Saudi National Day — MOS (X post)",
+      "pdfPage": 20,
+      "assignedTo": ["work-saudi-national-day-mos"]
+    },
+    {
+      "id": "yt-advertising-campaign",
+      "platform": "youtube",
+      "url": "https://www.youtube.com/watch?v=OelZLHpcCJA",
+      "youtubeId": "OelZLHpcCJA",
+      "label": "Advertising Campaign",
+      "pdfPage": 21,
+      "assignedTo": ["work-advertising-campaign"]
+    },
+    {
+      "id": "x-event-gea",
+      "platform": "x",
+      "url": "https://x.com/gea_sa/status/1942574532939898889",
+      "urlCanonical": "https://x.com/gea_sa/status/1942574532939898889?s=46&t=8SSo742agsBk40o_v3jBLA",
+      "label": "Event — GEA",
+      "pdfPage": 25,
+      "assignedTo": ["work-event-gea"]
+    },
+    {
+      "id": "linkedin-event-half-million",
+      "platform": "linkedin",
+      "url": "https://www.linkedin.com/posts/halfmillion_aevaepaepabraetaesaeyaewaeu-weaimhigher-activity-7415814586047643648-M2hk",
+      "urlCanonical": "https://www.linkedin.com/posts/halfmillion_aevaepaepabraetaesaeyaewaeu-weaimhigher-activity-7415814586047643648-M2hk?utm_source=share&utm_medium=member_ios",
+      "label": "Event — Half Million",
+      "pdfPage": 26,
+      "assignedTo": ["work-event-half-million"]
+    }
+  ],
+  "youtubeAll": [
+    "https://www.youtube.com/watch?v=r55fNz-73O4",
+    "https://www.youtube.com/watch?v=y3DmY6bIu4w",
+    "https://www.youtube.com/watch?v=gRuc1m90jck",
+    "https://www.youtube.com/watch?v=HKhbA936FcY",
+    "https://www.youtube.com/watch?v=9z2KLeBiloQ",
+    "https://www.youtube.com/watch?v=OelZLHpcCJA"
+  ],
+  "socialAll": [
+    "https://www.instagram.com/reel/DFjAEbHoVrE/",
+    "https://x.com/mosgovsa/status/2024559617225691574",
+    "https://x.com/gea_sa/status/1942574532939898889",
+    "https://www.linkedin.com/posts/halfmillion_aevaepaepabraetaesaeyaewaeu-weaimhigher-activity-7415814586047643648-M2hk"
+  ]
+}
