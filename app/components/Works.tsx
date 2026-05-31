@@ -28,7 +28,6 @@ export default function Works() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const ctx = gsap.context(() => {
-      // Eyebrow label
       gsap.from(eyebrowRef.current, {
         y: 20,
         opacity: 0,
@@ -38,7 +37,6 @@ export default function Works() {
         scrollTrigger: { trigger: sectionRef.current, start: "top 78%" },
       });
 
-      // Section heading
       gsap.from(headingRef.current, {
         y: 56,
         opacity: 0,
@@ -48,7 +46,6 @@ export default function Works() {
         scrollTrigger: { trigger: sectionRef.current, start: "top 75%" },
       });
 
-      // Featured work items — each article fades up individually
       if (featuredRef.current) {
         gsap.from(featuredRef.current.querySelectorAll("article"), {
           y: 64,
@@ -64,7 +61,6 @@ export default function Works() {
         });
       }
 
-      // "More Work" label
       if (archiveLabelRef.current) {
         gsap.from(archiveLabelRef.current, {
           y: 20,
@@ -76,7 +72,6 @@ export default function Works() {
         });
       }
 
-      // Archive grid — softer, faster stagger
       if (archiveRef.current) {
         gsap.from(archiveRef.current.querySelectorAll("article"), {
           y: 40,
@@ -141,7 +136,7 @@ export default function Works() {
     if (isFeatured) {
       return (
         <article key={work.id} className={`featured-work-${idx} group`}>
-          <div className="relative overflow-hidden rounded-2xl md:rounded-3xl bg-[#f5f2ed] mb-8 md:mb-10">
+          <div className="works-featured-card relative overflow-hidden rounded-2xl md:rounded-3xl bg-[#111111] mb-8 md:mb-10">
             <div className="relative aspect-video md:aspect-[16/9] lg:h-[70vh] overflow-hidden">
               <Image
                 fill
@@ -151,19 +146,21 @@ export default function Works() {
                 sizes="(max-width: 768px) 100vw, 90vw"
                 className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:scale-[1.03]"
                 onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
-                  e.currentTarget.style.background = "#E8E5E0";
+                  e.currentTarget.style.background = "#111111";
                   e.currentTarget.style.display = "none";
                 }}
               />
+              {/* Bottom gradient */}
+              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />
             </div>
 
             {mediaUrl && (
-              <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/25 transition-colors duration-500">
+              <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/30 transition-colors duration-500">
                 <button
                   type="button"
                   onClick={handleMediaClick}
                   aria-label={`Play ${title}`}
-                  className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/0 group-hover:bg-white text-transparent group-hover:text-black scale-75 group-hover:scale-100 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
+                  className="inline-flex items-center justify-center w-16 h-16 rounded-full border border-[#c9a96e]/50 bg-[#050505]/0 group-hover:bg-[#050505]/80 group-hover:border-[#c9a96e] text-transparent group-hover:text-[#c9a96e] scale-75 group-hover:scale-100 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
                 >
                   <svg aria-hidden="true" className="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z" />
@@ -175,23 +172,23 @@ export default function Works() {
 
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-8">
             <div className="flex-1">
-              <h3 className="text-2xl md:text-4xl lg:text-5xl font-black leading-tight mb-3">
+              <h3 className="text-2xl md:text-4xl lg:text-5xl font-black leading-tight mb-3 text-[#f5f2ed]">
                 {title}
               </h3>
-              <p className="text-sm md:text-base uppercase tracking-widest text-[#C6A77D]">
+              <p className="text-xs uppercase tracking-widest text-[#c9a96e]">
                 {work.categories.join(" · ")}
               </p>
             </div>
 
             {client && (
               <div className="text-left md:text-right">
-                <p className="text-base md:text-lg text-black/60 mb-2">{client.name}</p>
+                <p className="text-base md:text-lg text-[#f5f2ed]/45 mb-2">{client.name}</p>
                 {primaryMedia && primaryMedia.platform !== "youtube" && (
                   <a
                     href={primaryMedia.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block text-xs md:text-sm font-medium text-[#C6A77D] hover:text-black transition-colors duration-300"
+                    className="inline-block text-xs md:text-sm font-medium text-[#c9a96e] hover:text-[#f5f2ed] transition-colors duration-300"
                   >
                     View on {primaryMedia.platform}
                   </a>
@@ -205,7 +202,7 @@ export default function Works() {
 
     return (
       <article key={work.id} className={`archive-work-${idx} group`}>
-        <div className="relative overflow-hidden rounded-xl md:rounded-2xl bg-[#f5f2ed] mb-4 md:mb-6">
+        <div className="relative overflow-hidden rounded-xl md:rounded-2xl bg-[#111111] mb-4 md:mb-6 border border-[#f5f2ed]/5">
           <div className="relative aspect-[16/10] overflow-hidden">
             <Image
               fill
@@ -215,19 +212,19 @@ export default function Works() {
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:scale-[1.03]"
               onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
-                e.currentTarget.style.background = "#E8E5E0";
+                e.currentTarget.style.background = "#111111";
                 e.currentTarget.style.display = "none";
               }}
             />
           </div>
 
           {mediaUrl && (
-            <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/25 transition-colors duration-500">
+            <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/30 transition-colors duration-500">
               <button
                 type="button"
                 onClick={handleMediaClick}
                 aria-label={`Play ${title}`}
-                className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/0 group-hover:bg-white text-transparent group-hover:text-black scale-75 group-hover:scale-100 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
+                className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-[#c9a96e]/50 bg-[#050505]/0 group-hover:bg-[#050505]/80 group-hover:border-[#c9a96e] text-transparent group-hover:text-[#c9a96e] scale-75 group-hover:scale-100 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
               >
                 <svg aria-hidden="true" className="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M8 5v14l11-7z" />
@@ -238,17 +235,17 @@ export default function Works() {
         </div>
 
         <div>
-          <h4 className="text-lg md:text-xl font-bold mb-2">{title}</h4>
-          <p className="text-xs uppercase tracking-widest text-[#C6A77D] mb-2">
+          <h4 className="text-lg md:text-xl font-bold mb-2 text-[#f5f2ed]">{title}</h4>
+          <p className="text-xs uppercase tracking-widest text-[#c9a96e] mb-2">
             {work.categories.join(" · ")}
           </p>
-          {client && <p className="text-sm text-black/60">{client.name}</p>}
+          {client && <p className="text-sm text-[#f5f2ed]/40">{client.name}</p>}
           {primaryMedia && primaryMedia.platform !== "youtube" && (
             <a
               href={primaryMedia.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block text-xs font-medium text-[#C6A77D] hover:text-black transition-colors duration-300 mt-2"
+              className="inline-block text-xs font-medium text-[#c9a96e] hover:text-[#f5f2ed] transition-colors duration-300 mt-2"
             >
               View on {primaryMedia.platform}
             </a>
@@ -260,12 +257,16 @@ export default function Works() {
 
   return (
     <>
-      <section ref={sectionRef} id="works" className="bg-white py-24 md:py-32 px-8 md:px-16">
-        <p ref={eyebrowRef} className="uppercase tracking-[0.3em] text-sm text-[#C6A77D] mb-6">
+      <section ref={sectionRef} id="works" className="bg-[#050505] py-24 md:py-32 px-8 md:px-16">
+        {/* Top separator */}
+        <div className="absolute left-8 right-8 md:left-16 md:right-16 h-px bg-[#f5f2ed]/8 -mt-1" />
+
+        <p ref={eyebrowRef} className="uppercase tracking-[0.35em] text-xs text-[#c9a96e] mb-6 flex items-center gap-4">
+          <span className="block w-8 h-px bg-[#c9a96e]/60" />
           {content.work.sectionTitle.en}
         </p>
 
-        <h2 ref={headingRef} className="text-5xl md:text-7xl font-black mb-20 max-w-4xl">
+        <h2 ref={headingRef} className="text-5xl md:text-7xl font-black mb-20 max-w-4xl text-[#f5f2ed]">
           Previous Work
         </h2>
 
@@ -277,7 +278,7 @@ export default function Works() {
 
         {archiveItems.length > 0 && (
           <>
-            <p ref={archiveLabelRef} className="uppercase tracking-[0.3em] text-sm text-black/40 mb-10">
+            <p ref={archiveLabelRef} className="uppercase tracking-[0.3em] text-xs text-[#f5f2ed]/25 mb-10">
               More Work
             </p>
             <div ref={archiveRef} className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14">

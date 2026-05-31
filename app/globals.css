@@ -1,12 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f5f2ed;
-  --foreground: #111111;
-  --gold: #C6A77D;
+  --background: #050505;
+  --foreground: #f5f2ed;
+  --gold: #c9a96e;
 }
 
-/* Lenis owns scroll behaviour — removed html scroll-behavior: smooth to avoid conflict */
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -15,7 +14,7 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-body);
+  font-family: var(--font-sans, 'DM Sans', sans-serif);
 }
 
 h1,
@@ -24,13 +23,35 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-heading);
-  letter-spacing: -0.04em;
+  font-family: var(--font-sans, 'DM Sans', sans-serif);
+  letter-spacing: -0.03em;
 }
 
 ::selection {
-  background: #111111;
-  color: #f5f2ed;
+  background: #c9a96e;
+  color: #050505;
+}
+
+/* Luxury gold scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #c9a96e;
+  border-radius: 2px;
+}
+
+/* —— Hero video panel —— */
+.hero-video-panel {
+  box-shadow: 0 40px 100px rgba(0,0,0,0.7), 0 0 0 1px rgba(201,169,110,0.12);
+}
+
+/* —— Works featured card —— */
+.works-featured-card {
+  box-shadow: 0 24px 60px rgba(0,0,0,0.6);
 }
 
 /* —— Client logo marquee (luxury, calm) —— */
@@ -47,7 +68,6 @@ h6 {
   display: flex;
   width: max-content;
   align-items: center;
-  /* Slowed to 65 s for a more unhurried, premium pace */
   animation: marquee-luxury 65s linear infinite;
   will-change: transform;
 }
@@ -74,7 +94,6 @@ h6 {
 
 /* —— Mobile nav overlay items (staggered entrance) ————————————————————— */
 
-/* Default state shared by all animated items */
 .nav-mobile-item,
 .nav-mobile-footer {
   opacity: 0;
@@ -83,7 +102,6 @@ h6 {
     opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1),
     transform 0.45s cubic-bezier(0.4, 0, 0.2, 1),
     color 0.3s ease;
-  /* No delay on close so the overlay collapses instantly */
   transition-delay: 0ms;
 }
 
@@ -91,7 +109,6 @@ h6 {
   transform: translateY(16px);
 }
 
-/* When the overlay is open: stagger each item in */
 .nav-mobile-open .nav-mobile-item:nth-child(1) { transition-delay: 0ms; }
 .nav-mobile-open .nav-mobile-item:nth-child(2) { transition-delay: 70ms; }
 .nav-mobile-open .nav-mobile-item:nth-child(3) { transition-delay: 140ms; }
@@ -106,7 +123,6 @@ h6 {
 
 /* —— Reduced motion: disable all JS-driven and CSS animations —— */
 @media (prefers-reduced-motion: reduce) {
-  /* Restore native smooth scrolling as fallback */
   html {
     scroll-behavior: smooth;
   }

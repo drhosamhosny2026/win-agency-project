@@ -43,46 +43,53 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="home" className="min-h-screen grid grid-cols-1 lg:grid-cols-2 items-center px-8 md:px-16 pt-32 gap-16 bg-[#f5f2ed]">
+    <section id="home" className="min-h-screen grid grid-cols-1 lg:grid-cols-2 items-center px-8 md:px-16 pt-32 gap-16 bg-[#050505]">
 
       {/* Left */}
       <div>
+        {/* Gold eyebrow with subtle line */}
         <p
           ref={eyebrowRef}
-          className="uppercase tracking-[0.3em] text-sm mb-6 text-[#C6A77D]"
+          className="uppercase tracking-[0.35em] text-xs mb-8 text-[#c9a96e] flex items-center gap-4"
         >
+          <span className="block w-8 h-px bg-[#c9a96e]/60" />
           Creative Marketing Agency
         </p>
 
         <h1
           ref={titleRef}
-          className="text-[72px] md:text-[140px] leading-[0.9] font-black"
+          className="text-[clamp(3.5rem,10vw,8.75rem)] leading-[0.88] font-black text-[#f5f2ed]"
         >
           Where Dreams Begin
         </h1>
 
         <p
           ref={textRef}
-          className="mt-10 text-lg md:text-2xl max-w-xl leading-relaxed text-black/70"
+          className="mt-10 text-lg md:text-xl max-w-xl leading-relaxed text-[#f5f2ed]/55 font-light"
         >
           A Saudi creative entity crafting impactful experiences through
           marketing, music, events, and storytelling.
         </p>
       </div>
 
-      {/* Right */}
+      {/* Right — video panel */}
       <div
         ref={videoRef}
-        className="relative h-[70vh] rounded-[40px] overflow-hidden bg-black"
+        className="hero-video-panel relative h-[70vh] rounded-[40px] overflow-hidden"
       >
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="w-full h-full object-cover opacity-90"
+          className="w-full h-full object-cover opacity-85"
           src="https://videos.pexels.com/video-files/3209828/3209828-hd_1920_1080_25fps.mp4"
         />
+        {/* Subtle bottom fade */}
+        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#050505]/60 to-transparent pointer-events-none" />
+        {/* Gold corner accent */}
+        <div className="absolute top-6 right-6 w-12 h-12 border-t border-r border-[#c9a96e]/30 rounded-tr-[20px] pointer-events-none" />
+        <div className="absolute bottom-6 left-6 w-12 h-12 border-b border-l border-[#c9a96e]/30 rounded-bl-[20px] pointer-events-none" />
       </div>
 
     </section>

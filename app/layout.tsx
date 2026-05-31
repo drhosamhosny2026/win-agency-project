@@ -1,16 +1,12 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "./components/SmoothScroll";
 
-const playfair = Playfair_Display({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-heading",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-body",
+  weight: ["300", "400", "500", "700", "900"],
+  variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
@@ -24,11 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${playfair.variable} ${inter.variable} antialiased`}
-    >
-      <body className="bg-[#f5f2ed] text-[#111111]">
+    <html lang="en" className={`${dmSans.variable} antialiased`}>
+      <body className="bg-[#050505] text-[#f5f2ed]">
         <SmoothScroll />
         {children}
       </body>

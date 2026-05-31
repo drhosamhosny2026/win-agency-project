@@ -18,7 +18,7 @@ function LogoMark({ client }: { client: ClientLogoEntry }) {
           src={client.logo}
           alt={client.alt}
           sizes="(max-width: 768px) 100px, 120px"
-          className="object-contain object-center opacity-[0.52] grayscale contrast-[0.95] brightness-[0.92] transition-[opacity,filter] duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:opacity-100 group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-100"
+          className="object-contain object-center opacity-[0.35] grayscale brightness-[1.8] transition-[opacity,filter] duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:opacity-80 group-hover:grayscale-0 group-hover:brightness-100"
           unoptimized
         />
       </div>
@@ -51,7 +51,6 @@ export default function Clients() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const ctx = gsap.context(() => {
-      // Eyebrow label
       gsap.from(eyebrowRef.current, {
         y: 20,
         opacity: 0,
@@ -64,7 +63,6 @@ export default function Clients() {
         },
       });
 
-      // Main heading
       gsap.from(headingRef.current, {
         y: 48,
         opacity: 0,
@@ -77,7 +75,6 @@ export default function Clients() {
         },
       });
 
-      // Marquee strip fades in as a unit
       gsap.from(marqueeRef.current, {
         opacity: 0,
         duration: 1.2,
@@ -96,32 +93,36 @@ export default function Clients() {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-[#f5f2ed] py-28 md:py-36 overflow-hidden"
+      className="relative bg-[#050505] py-28 md:py-36 overflow-hidden"
       aria-label={content.clients.sectionTitle.en}
     >
+      {/* Top separator */}
+      <div className="absolute top-0 left-8 right-8 md:left-16 md:right-16 h-px bg-[#f5f2ed]/8" />
+
       <div className="mb-14 md:mb-20 px-8 md:px-16 lg:px-20">
         <p
           ref={eyebrowRef}
-          className="uppercase tracking-[0.35em] text-xs md:text-sm text-[#C6A77D]"
+          className="uppercase tracking-[0.35em] text-xs text-[#c9a96e] flex items-center gap-4"
         >
+          <span className="block w-8 h-px bg-[#c9a96e]/60" />
           {content.clients.sectionTitle.en}
         </p>
         <h2
           ref={headingRef}
-          className="mt-5 text-3xl md:text-5xl lg:text-6xl font-black max-w-3xl leading-[1.05] text-[#111111]"
+          className="mt-6 text-3xl md:text-5xl lg:text-6xl font-black max-w-3xl leading-[1.05] text-[#f5f2ed]"
         >
           Trusted by Leading Brands
         </h2>
       </div>
 
       <div ref={marqueeRef} className="relative">
-        {/* Edge fades */}
+        {/* Edge fades — dark */}
         <div
-          className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 md:w-28 lg:w-36 bg-gradient-to-r from-[#f5f2ed] via-[#f5f2ed]/90 to-transparent"
+          className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 md:w-28 lg:w-36 bg-gradient-to-r from-[#050505] via-[#050505]/90 to-transparent"
           aria-hidden
         />
         <div
-          className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 md:w-28 lg:w-36 bg-gradient-to-l from-[#f5f2ed] via-[#f5f2ed]/90 to-transparent"
+          className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 md:w-28 lg:w-36 bg-gradient-to-l from-[#050505] via-[#050505]/90 to-transparent"
           aria-hidden
         />
 

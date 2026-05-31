@@ -19,7 +19,6 @@ export default function Navbar() {
   const [active,   setActive]   = useState("home");
   const [scrolled, setScrolled] = useState(false);
 
-  // ── Entrance animation ────────────────────────────────────────────────────
   useEffect(() => {
     const nav = navRef.current;
     if (!nav) return;
@@ -36,7 +35,6 @@ export default function Navbar() {
     return () => { ctx.revert(); gsap.set(nav, { clearProps: "all" }); };
   }, []);
 
-  // ── Sync ARIA attributes imperatively (static analyser can't validate JSX expressions) ──
   useEffect(() => {
     hamburgerRef.current?.setAttribute("aria-expanded", open ? "true" : "false");
     if (open) {
@@ -46,14 +44,12 @@ export default function Navbar() {
     }
   }, [open]);
 
-  // ── Background depth on scroll ────────────────────────────────────────────
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 48);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // ── Active section via IntersectionObserver ───────────────────────────────
   useEffect(() => {
     const sections = NAV_LINKS
       .map(({ href }) => document.getElementById(href.slice(1)))
@@ -69,7 +65,6 @@ export default function Navbar() {
     return () => observer.disconnect();
   }, []);
 
-  // ── Lock body scroll when mobile menu is open ─────────────────────────────
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
@@ -88,15 +83,15 @@ export default function Navbar() {
         ref={navRef}
         className={`fixed top-0 left-0 w-full z-50 px-8 md:px-16 py-6 flex items-center justify-between transition-[background,box-shadow] duration-500 ${
           scrolled
-            ? "bg-[#f5f2ed]/95 backdrop-blur-md shadow-[0_1px_0_rgba(0,0,0,0.07)]"
-            : "bg-[#f5f2ed]/80 backdrop-blur-md"
+            ? "bg-[#050505]/90 backdrop-blur-md shadow-[0_1px_0_rgba(245,242,237,0.06)]"
+            : "bg-transparent"
         }`}
       >
         {/* Logo */}
         <button
           type="button"
           onClick={() => handleLink("#home")}
-          className="text-2xl font-black tracking-tight hover:text-[#C6A77D] transition-colors duration-300 cursor-pointer"
+          className="text-2xl font-black tracking-tight hover:text-[#c9a96e] transition-colors duration-300 cursor-pointer text-[#f5f2ed]"
         >
           WIN
         </button>
@@ -112,12 +107,12 @@ export default function Navbar() {
                 type="button"
                 onClick={() => handleLink(href)}
                 className={`relative pb-0.5 transition-colors duration-300 cursor-pointer ${
-                  isActive ? "text-[#C6A77D]" : "text-black/55 hover:text-black"
+                  isActive ? "text-[#c9a96e]" : "text-[#f5f2ed]/50 hover:text-[#f5f2ed]"
                 }`}
               >
                 {label}
                 <span
-                  className={`absolute bottom-0 left-0 h-px bg-[#C6A77D] transition-all duration-300 ${
+                  className={`absolute bottom-0 left-0 h-px bg-[#c9a96e] transition-all duration-300 ${
                     isActive ? "w-full" : "w-0"
                   }`}
                 />
@@ -130,7 +125,7 @@ export default function Navbar() {
         <button
           type="button"
           onClick={() => handleLink("#contact")}
-          className="hidden md:inline-flex items-center border border-black/80 rounded-full px-6 py-2.5 text-sm font-medium tracking-wide hover:bg-[#111111] hover:text-white hover:border-[#111111] transition-all duration-300 cursor-pointer"
+          className="hidden md:inline-flex items-center border border-[#c9a96e]/40 text-[#f5f2ed] rounded-full px-6 py-2.5 text-sm font-medium tracking-wide hover:bg-[#c9a96e] hover:text-[#050505] hover:border-[#c9a96e] transition-all duration-300 cursor-pointer"
         >
           Let&rsquo;s Talk
         </button>
@@ -145,9 +140,9 @@ export default function Navbar() {
           onClick={() => setOpen(!open)}
           className="md:hidden flex flex-col gap-[5px] p-1 cursor-pointer"
         >
-          <span className={`block w-6 h-[1.5px] bg-[#111111] origin-center transition-transform duration-300 ${open ? "rotate-45 translate-y-[6.5px]" : ""}`} />
-          <span className={`block w-6 h-[1.5px] bg-[#111111] transition-all duration-300 ${open ? "opacity-0 scale-x-0" : ""}`} />
-          <span className={`block w-6 h-[1.5px] bg-[#111111] origin-center transition-transform duration-300 ${open ? "-rotate-45 -translate-y-[6.5px]" : ""}`} />
+          <span className={`block w-6 h-[1.5px] bg-[#f5f2ed] origin-center transition-transform duration-300 ${open ? "rotate-45 translate-y-[6.5px]" : ""}`} />
+          <span className={`block w-6 h-[1.5px] bg-[#f5f2ed] transition-all duration-300 ${open ? "opacity-0 scale-x-0" : ""}`} />
+          <span className={`block w-6 h-[1.5px] bg-[#f5f2ed] origin-center transition-transform duration-300 ${open ? "-rotate-45 -translate-y-[6.5px]" : ""}`} />
         </button>
       </nav>
 
@@ -159,10 +154,13 @@ export default function Navbar() {
         aria-modal="true"
         aria-label="Navigation menu"
         aria-hidden="true"
-        className={`fixed inset-0 z-40 bg-[#f5f2ed] flex flex-col justify-center px-10 md:hidden transition-opacity duration-300 ${
+        className={`fixed inset-0 z-40 bg-[#050505] flex flex-col justify-center px-10 md:hidden transition-opacity duration-300 ${
           open ? "nav-mobile-open opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
+        {/* Subtle gold line at top */}
+        <div className="absolute top-0 left-10 right-10 h-px bg-[#c9a96e]/20" />
+
         {/* Nav items */}
         <ul className="flex flex-col gap-2" role="list">
           {NAV_LINKS.map(({ label, href }) => (
@@ -170,7 +168,7 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={() => handleLink(href)}
-                className="w-full text-left font-black leading-none text-[clamp(3rem,12vw,6rem)] hover:text-[#C6A77D] transition-colors duration-300 cursor-pointer"
+                className="w-full text-left font-black leading-none text-[clamp(3rem,12vw,6rem)] text-[#f5f2ed] hover:text-[#c9a96e] transition-colors duration-300 cursor-pointer"
               >
                 {label}
               </button>
@@ -179,13 +177,13 @@ export default function Navbar() {
         </ul>
 
         {/* Contact detail */}
-        <div className="mt-14 border-t border-black/10 pt-8 nav-mobile-footer">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#C6A77D] mb-3">
+        <div className="mt-14 border-t border-[#f5f2ed]/10 pt-8 nav-mobile-footer">
+          <p className="text-xs uppercase tracking-[0.3em] text-[#c9a96e] mb-3">
             Get in touch
           </p>
           <a
             href="mailto:Info@iwin-sa.com"
-            className="text-lg font-medium hover:text-[#C6A77D] transition-colors duration-300"
+            className="text-lg font-medium text-[#f5f2ed] hover:text-[#c9a96e] transition-colors duration-300"
           >
             Info@iwin-sa.com
           </a>

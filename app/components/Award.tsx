@@ -69,31 +69,43 @@ export default function Award() {
   return (
     <section
       ref={sectionRef}
-      className="bg-[#111111] text-white py-40 px-8 md:px-16"
+      className="relative bg-[#0a0a0a] text-[#f5f2ed] py-40 px-8 md:px-16 overflow-hidden"
     >
-      <p ref={eyebrowRef} className="uppercase tracking-[0.3em] text-sm text-[#C6A77D] mb-6">
+      {/* Ambient gold glow — top-left corner */}
+      <div className="pointer-events-none absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-[#c9a96e]/4 blur-[120px]" />
+
+      {/* Gold rule at top */}
+      <div className="absolute top-0 left-8 right-8 md:left-16 md:right-16 h-px bg-[#c9a96e]/20" />
+
+      <p ref={eyebrowRef} className="uppercase tracking-[0.35em] text-xs text-[#c9a96e] mb-8 flex items-center gap-4">
+        <span className="block w-8 h-px bg-[#c9a96e]/60" />
         {content.awards.sectionTitle.en}
       </p>
 
       <h2
         ref={headingRef}
-        className="text-5xl md:text-8xl font-black leading-[0.95] max-w-5xl"
+        className="text-5xl md:text-8xl font-black leading-[0.92] max-w-5xl"
       >
         {award.title.en}
       </h2>
 
       <p
         ref={descriptionRef}
-        className="mt-10 text-xl text-white/70 max-w-2xl leading-relaxed"
+        className="mt-10 text-xl text-[#f5f2ed]/55 max-w-2xl leading-relaxed font-light"
       >
         {award.description.en}
       </p>
 
       {client && (
-        <p ref={clientRef} className="mt-6 text-[#C6A77D] text-lg font-medium">
-          Client: {client.name}
+        <p ref={clientRef} className="mt-8 text-[#c9a96e] text-sm font-medium tracking-[0.2em] uppercase">
+          {client.name}
         </p>
       )}
+
+      {/* Decorative large numeral */}
+      <div className="pointer-events-none absolute bottom-10 right-10 md:right-16 text-[12rem] md:text-[18rem] font-black leading-none text-[#f5f2ed]/[0.025] select-none">
+        ★
+      </div>
     </section>
   );
 }
