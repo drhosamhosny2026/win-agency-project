@@ -13,11 +13,11 @@ gsap.registerPlugin(ScrollTrigger);
 type ExpandedCard = { youtubeId: string; title: string; coverSrc: string; rect: DOMRect };
 
 const CATEGORY_COVERS: Record<string, string> = {
-  event:       "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1600&auto=format&fit=crop",
-  sponsorship: "https://images.unsplash.com/photo-1560523159-6b681a1e1852?w=1600&auto=format&fit=crop",
-  campaign:    "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1600&auto=format&fit=crop",
-  music:       "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1600&auto=format&fit=crop",
-  marketing:   "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1600&auto=format&fit=crop",
+  event:       "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=900&auto=format&fit=crop&q=75",
+  sponsorship: "https://images.unsplash.com/photo-1560523159-6b681a1e1852?w=900&auto=format&fit=crop&q=75",
+  campaign:    "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=900&auto=format&fit=crop&q=75",
+  music:       "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=900&auto=format&fit=crop&q=75",
+  marketing:   "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=900&auto=format&fit=crop&q=75",
 };
 
 export default function Works() {
@@ -98,7 +98,7 @@ export default function Works() {
     if (primaryMedia?.platform === "youtube" && primaryMedia.youtubeId) {
       cover = `https://img.youtube.com/vi/${primaryMedia.youtubeId}/hqdefault.jpg`;
     } else if (work.id === "work-eid-song") {
-      cover = "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=1600&auto=format&fit=crop";
+      cover = "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=900&auto=format&fit=crop&q=75";
     } else {
       cover = CATEGORY_COVERS[work.category] ?? `${work.assetsPath}/cover.jpg`;
     }
@@ -143,7 +143,7 @@ export default function Works() {
                 aria-label={`${t("works", "play")} ${title}`}
                 className="block relative w-full aspect-video md:aspect-[16/9] lg:h-[70vh] overflow-hidden cursor-pointer appearance-none border-0 p-0 bg-transparent"
               >
-                <Image fill unoptimized src={cover} alt={title}
+                <Image fill src={cover} alt={title}
                   sizes="(max-width: 768px) 100vw, 90vw"
                   className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:scale-[1.03]"
                 />
@@ -158,7 +158,7 @@ export default function Works() {
               </button>
             ) : (
               <div className="relative aspect-video md:aspect-[16/9] lg:h-[70vh] overflow-hidden">
-                <Image fill unoptimized src={cover} alt={title}
+                <Image fill src={cover} alt={title}
                   sizes="(max-width: 768px) 100vw, 90vw"
                   className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:scale-[1.03]"
                 />

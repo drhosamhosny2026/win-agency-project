@@ -12,6 +12,8 @@ gsap.registerPlugin(ScrollTrigger);
 export default function SmoothScroll() {
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    // Touch devices have native momentum scroll — Lenis adds overhead without benefit
+    if (window.matchMedia("(hover: none) and (pointer: coarse)").matches) return;
 
     const lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
 
