@@ -61,6 +61,9 @@ export default function Hero() {
         <div className="w-[700px] h-[700px] rounded-full bg-[#c9a96e]/[0.045] blur-[140px]" />
       </div>
 
+      {/* SEO: visually hidden H1 — changes with language client-side */}
+      <h1 className="sr-only">{t("hero", "h1")}</h1>
+
       {/* Center content */}
       <div className="relative flex flex-col items-center text-center px-8">
 

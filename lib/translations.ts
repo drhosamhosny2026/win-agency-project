@@ -8,6 +8,10 @@ export const translations = {
     tagline: { ar: "وكالة تسويق إبداعية",       en: "Creative Marketing Agency"  },
     cta:     { ar: "لنفُز",                     en: "Let's Win"                  },
     scroll:  { ar: "اسحب",                      en: "Scroll"                     },
+    h1: {
+      ar: "WIN — وكالة تسويق إبداعي وإنتاج في الرياض",
+      en: "WIN — Creative Marketing & Production Agency in Riyadh",
+    },
   },
 
   /* ─── Navbar ────────────────────────────────────────────────────────── */
