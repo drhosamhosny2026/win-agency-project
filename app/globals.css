@@ -27,6 +27,34 @@ h6 {
   letter-spacing: -0.03em;
 }
 
+/* ── RTL: switch body & headings to Rakik ──────────────── */
+[dir="rtl"] body {
+  font-family: var(--font-rakik, sans-serif);
+}
+
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6 {
+  font-family: var(--font-rakik, sans-serif);
+  letter-spacing: 0;
+}
+
+/* Utility: force DM Sans regardless of dir (WIN, KAFD, brand names) */
+.font-latin {
+  font-family: var(--font-sans, 'DM Sans', sans-serif) !important;
+  letter-spacing: inherit;
+}
+
+/* Better Arabic readability */
+[dir="rtl"] p,
+[dir="rtl"] li,
+[dir="rtl"] a {
+  line-height: 1.85;
+}
+
 ::selection {
   background: #c9a96e;
   color: #050505;
@@ -76,20 +104,16 @@ h6 {
   animation-play-state: paused;
 }
 
-/* —— Video modal animations —— */
-@keyframes modal-fade {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-.video-modal-overlay {
-  will-change: opacity;
-  animation: modal-fade 0.25s cubic-bezier(0.4, 0, 0.2, 1) both;
-}
-
-.video-modal-content {
-  will-change: opacity;
-  animation: modal-fade 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+/* —— Video modal fade mask — 4-edge gradient vignette —— */
+.video-fade-mask {
+  -webkit-mask-image:
+    linear-gradient(to right,  transparent 0%, black 7%, black 93%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, black 7%, black 93%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right,  transparent 0%, black 7%, black 93%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, black 7%, black 93%, transparent 100%);
+  mask-composite: intersect;
 }
 
 /* —— Mobile nav overlay items (staggered entrance) ————————————————————— */
@@ -119,6 +143,21 @@ h6 {
 .nav-mobile-open .nav-mobile-footer {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* —— Text marquee belt —— */
+@keyframes marquee-text-flow {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+
+.text-marquee-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  white-space: nowrap;
+  animation: marquee-text-flow 45s linear infinite;
+  will-change: transform;
 }
 
 /* —— Reduced motion: disable all JS-driven and CSS animations —— */

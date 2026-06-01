@@ -1,97 +1,125 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
+import { lenisScrollTo } from "@/lib/lenis-scroll";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Hero() {
-  const eyebrowRef = useRef<HTMLParagraphElement>(null);
-  const titleRef   = useRef<HTMLHeadingElement>(null);
-  const textRef    = useRef<HTMLParagraphElement>(null);
-  const videoRef   = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
+
+  const logoRef    = useRef<HTMLDivElement>(null);
+  const nameRef    = useRef<HTMLParagraphElement>(null);
+  const dividerRef = useRef<HTMLDivElement>(null);
+  const taglineRef = useRef<HTMLParagraphElement>(null);
+  const ctaRef     = useRef<HTMLButtonElement>(null);
+  const scrollRef  = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ delay: 0.2 });
+      const tl = gsap.timeline({ delay: 0.4 });
 
-      tl.from(eyebrowRef.current, {
-        y: 24,
-        opacity: 0,
-        duration: 0.9,
-        ease: "power3.out",
+      tl.from(logoRef.current, {
+        scale: 0.86, opacity: 0, duration: 1.5, ease: "power3.out",
         clearProps: "transform,opacity",
       })
-        .from(
-          titleRef.current,
-          { y: 100, opacity: 0, duration: 1.3, ease: "power4.out", clearProps: "transform,opacity" },
-          "-=0.55"
-        )
-        .from(
-          textRef.current,
-          { y: 32, opacity: 0, duration: 1.0, ease: "power3.out", clearProps: "transform,opacity" },
-          "-=0.75"
-        )
-        .from(
-          videoRef.current,
-          { scale: 1.1, opacity: 0, duration: 1.6, ease: "power3.out", clearProps: "transform,opacity" },
-          "-=1.1"
-        );
+      .from(nameRef.current, {
+        y: 22, opacity: 0, duration: 1.0, ease: "power3.out",
+        clearProps: "transform,opacity",
+      }, "-=0.9")
+      .from(dividerRef.current, {
+        scaleX: 0, opacity: 0, duration: 0.7, ease: "power2.out",
+        clearProps: "transform,opacity",
+      }, "-=0.7")
+      .from(taglineRef.current, {
+        y: 14, opacity: 0, duration: 0.9, ease: "power2.out",
+        clearProps: "transform,opacity",
+      }, "-=0.5")
+      .from(ctaRef.current, {
+        y: 16, opacity: 0, duration: 0.8, ease: "power2.out",
+        clearProps: "transform,opacity",
+      }, "-=0.5")
+      .from(scrollRef.current, {
+        opacity: 0, duration: 0.8, ease: "power2.out",
+        clearProps: "opacity",
+      }, "-=0.3");
     });
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <section id="home" className="min-h-screen grid grid-cols-1 lg:grid-cols-2 items-center px-8 md:px-16 pt-32 gap-16 bg-[#050505]">
-
-      {/* Left */}
-      <div>
-        {/* Gold eyebrow with subtle line */}
-        <p
-          ref={eyebrowRef}
-          className="uppercase tracking-[0.35em] text-xs mb-8 text-[#c9a96e] flex items-center gap-4"
-        >
-          <span className="block w-8 h-px bg-[#c9a96e]/60" />
-          Creative Marketing Agency
-        </p>
-
-        <h1
-          ref={titleRef}
-          className="text-[clamp(3.5rem,10vw,8.75rem)] leading-[0.88] font-black text-[#f5f2ed]"
-        >
-          Where Dreams Begin
-        </h1>
-
-        <p
-          ref={textRef}
-          className="mt-10 text-lg md:text-xl max-w-xl leading-relaxed text-[#f5f2ed]/55 font-light"
-        >
-          A Saudi creative entity crafting impactful experiences through
-          marketing, music, events, and storytelling.
-        </p>
+    <section
+      id="home"
+      className="relative min-h-screen bg-[#050505] flex flex-col items-center justify-center overflow-hidden"
+    >
+      {/* Ambient gold glow */}
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+        <div className="w-[700px] h-[700px] rounded-full bg-[#c9a96e]/[0.045] blur-[140px]" />
       </div>
 
-      {/* Right — video panel */}
-      <div
-        ref={videoRef}
-        className="hero-video-panel relative h-[70vh] rounded-[40px] overflow-hidden"
-      >
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover opacity-85"
-          src="https://videos.pexels.com/video-files/3209828/3209828-hd_1920_1080_25fps.mp4"
+      {/* Center content */}
+      <div className="relative flex flex-col items-center text-center px-8">
+
+        {/* Logo */}
+        <div ref={logoRef}>
+          <Image
+            src="/logo.png"
+            alt="WIN Agency"
+            width={0}
+            height={0}
+            sizes="220px"
+            className="w-auto h-32 md:h-44"
+            priority
+          />
+        </div>
+
+        {/* Brand name */}
+        <p
+          ref={nameRef}
+          className="mt-8 text-[#c9a96e] text-xl md:text-2xl tracking-[0.65em] uppercase font-light font-latin"
+        >
+          {t("hero", "brand")}
+        </p>
+
+        {/* Gold divider */}
+        <div
+          ref={dividerRef}
+          className="mt-5 w-10 h-px bg-[#c9a96e]/50 origin-center"
         />
-        {/* Subtle bottom fade */}
-        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#050505]/60 to-transparent pointer-events-none" />
-        {/* Gold corner accent */}
-        <div className="absolute top-6 right-6 w-12 h-12 border-t border-r border-[#c9a96e]/30 rounded-tr-[20px] pointer-events-none" />
-        <div className="absolute bottom-6 left-6 w-12 h-12 border-b border-l border-[#c9a96e]/30 rounded-bl-[20px] pointer-events-none" />
+
+        {/* Tagline */}
+        <p
+          ref={taglineRef}
+          className="mt-5 text-[#f5f2ed]/40 text-[10px] md:text-[11px] tracking-[0.5em] uppercase"
+        >
+          {t("hero", "tagline")}
+        </p>
+
+        {/* CTA */}
+        <button
+          ref={ctaRef}
+          type="button"
+          onClick={() => lenisScrollTo("#contact")}
+          className="mt-10 px-9 py-3 border border-[#c9a96e] text-[#c9a96e] text-xs tracking-[0.35em] uppercase font-medium rounded-full hover:bg-[#c9a96e] hover:text-[#050505] transition-[background-color,color] duration-500 ease-out cursor-pointer"
+        >
+          {t("hero", "cta")}
+        </button>
       </div>
 
+      {/* SCROLL indicator */}
+      <div
+        ref={scrollRef}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
+      >
+        <span className="text-[9px] tracking-[0.55em] text-[#c9a96e]/55 uppercase font-light">
+          {t("hero", "scroll")}
+        </span>
+        <div className="w-px h-14 bg-gradient-to-b from-[#c9a96e]/60 to-transparent" />
+      </div>
     </section>
   );
 }

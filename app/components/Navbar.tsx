@@ -1,23 +1,29 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { lenisScrollTo } from "@/lib/lenis-scroll";
+import { useLanguage } from "@/context/LanguageContext";
 
-const NAV_LINKS = [
-  { label: "Home",     href: "#home"     },
-  { label: "Services", href: "#services" },
-  { label: "Work",     href: "#works"    },
-  { label: "Contact",  href: "#contact"  },
+const NAV_KEYS = [
+  { key: "home"     as const, href: "#home"     },
+  { key: "services" as const, href: "#services" },
+  { key: "work"     as const, href: "#works"    },
+  { key: "contact"  as const, href: "#contact"  },
 ];
 
 export default function Navbar() {
-  const navRef        = useRef<HTMLElement>(null);
-  const hamburgerRef  = useRef<HTMLButtonElement>(null);
-  const overlayRef    = useRef<HTMLDivElement>(null);
+  const { t, lang, setLang } = useLanguage();
+
+  const navRef       = useRef<HTMLElement>(null);
+  const hamburgerRef = useRef<HTMLButtonElement>(null);
+  const overlayRef   = useRef<HTMLDivElement>(null);
   const [open,     setOpen]     = useState(false);
   const [active,   setActive]   = useState("home");
   const [scrolled, setScrolled] = useState(false);
+
+  const toggleLang = () => setLang(lang === "en" ? "ar" : "en");
 
   useEffect(() => {
     const nav = navRef.current;
@@ -51,7 +57,7 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    const sections = NAV_LINKS
+    const sections = NAV_KEYS
       .map(({ href }) => document.getElementById(href.slice(1)))
       .filter((el): el is HTMLElement => el !== null);
 
@@ -59,7 +65,7 @@ export default function Navbar() {
 
     const observer = new IntersectionObserver(
       (entries) => entries.forEach((e) => { if (e.isIntersecting) setActive(e.target.id); }),
-      { threshold: 0.4 }
+      { rootMargin: "0px 0px -70% 0px", threshold: 0 }
     );
     sections.forEach((s) => observer.observe(s));
     return () => observer.disconnect();
@@ -91,14 +97,23 @@ export default function Navbar() {
         <button
           type="button"
           onClick={() => handleLink("#home")}
-          className="text-2xl font-black tracking-tight hover:text-[#c9a96e] transition-colors duration-300 cursor-pointer text-[#f5f2ed]"
+          aria-label="WIN Agency – back to top"
+          className="cursor-pointer p-0 bg-transparent border-0 appearance-none hover:opacity-80 transition-opacity duration-300"
         >
-          WIN
+          <Image
+            src="/logo.png"
+            alt="WIN Agency"
+            width={0}
+            height={0}
+            sizes="80px"
+            className="block h-[40px] w-auto mix-blend-screen"
+            priority
+          />
         </button>
 
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-10 text-sm font-medium">
-          {NAV_LINKS.map(({ label, href }) => {
+          {NAV_KEYS.map(({ key, href }) => {
             const id = href.slice(1);
             const isActive = active === id;
             return (
@@ -106,14 +121,17 @@ export default function Navbar() {
                 key={href}
                 type="button"
                 onClick={() => handleLink(href)}
-                className={`relative pb-0.5 transition-colors duration-300 cursor-pointer ${
-                  isActive ? "text-[#c9a96e]" : "text-[#f5f2ed]/50 hover:text-[#f5f2ed]"
+                className={`relative pb-1 cursor-pointer transition-[color,opacity] duration-500 ease-out font-latin ${
+                  isActive
+                    ? "text-[#c9a96e]"
+                    : "text-[#f5f2ed]/50 hover:text-[#f5f2ed] hover:opacity-100"
                 }`}
               >
-                {label}
+                {t("nav", key)}
+                {/* Underline — RTL: expand from inline-end */}
                 <span
-                  className={`absolute bottom-0 left-0 h-px bg-[#c9a96e] transition-all duration-300 ${
-                    isActive ? "w-full" : "w-0"
+                  className={`absolute bottom-0 ltr:left-0 rtl:right-0 h-px w-full bg-[#c9a96e] ltr:origin-left rtl:origin-right transition-transform duration-500 ease-out ${
+                    isActive ? "scale-x-100" : "scale-x-0"
                   }`}
                 />
               </button>
@@ -121,14 +139,25 @@ export default function Navbar() {
           })}
         </div>
 
-        {/* Desktop CTA */}
-        <button
-          type="button"
-          onClick={() => handleLink("#contact")}
-          className="hidden md:inline-flex items-center border border-[#c9a96e]/40 text-[#f5f2ed] rounded-full px-6 py-2.5 text-sm font-medium tracking-wide hover:bg-[#c9a96e] hover:text-[#050505] hover:border-[#c9a96e] transition-all duration-300 cursor-pointer"
-        >
-          Let&rsquo;s Talk
-        </button>
+        {/* Desktop right: lang toggle + CTA */}
+        <div className="hidden md:flex items-center gap-4">
+          <button
+            type="button"
+            onClick={toggleLang}
+            aria-label={lang === "en" ? "Switch to Arabic" : "Switch to English"}
+            className="text-[11px] tracking-[0.18em] font-medium border border-[#c9a96e]/30 text-[#c9a96e]/65 hover:text-[#c9a96e] hover:border-[#c9a96e]/65 rounded-full px-3.5 py-1.5 transition-all duration-300 cursor-pointer font-latin"
+          >
+            {t("nav", "langToggle")}
+          </button>
+
+          <button
+            type="button"
+            onClick={() => handleLink("#contact")}
+            className="inline-flex items-center border border-[#c9a96e]/40 text-[#f5f2ed] rounded-full px-6 py-2.5 text-sm font-medium tracking-wide hover:bg-[#c9a96e] hover:text-[#050505] hover:border-[#c9a96e] transition-all duration-300 cursor-pointer"
+          >
+            {t("nav", "cta")}
+          </button>
+        </div>
 
         {/* Mobile hamburger */}
         <button
@@ -158,32 +187,48 @@ export default function Navbar() {
           open ? "nav-mobile-open opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
-        {/* Subtle gold line at top */}
         <div className="absolute top-0 left-10 right-10 h-px bg-[#c9a96e]/20" />
 
-        {/* Nav items */}
+        {/* Nav items — text-start for RTL support */}
         <ul className="flex flex-col gap-2" role="list">
-          {NAV_LINKS.map(({ label, href }) => (
-            <li key={href} className="nav-mobile-item">
-              <button
-                type="button"
-                onClick={() => handleLink(href)}
-                className="w-full text-left font-black leading-none text-[clamp(3rem,12vw,6rem)] text-[#f5f2ed] hover:text-[#c9a96e] transition-colors duration-300 cursor-pointer"
-              >
-                {label}
-              </button>
-            </li>
-          ))}
+          {NAV_KEYS.map(({ key, href }) => {
+            const isActive = active === href.slice(1);
+            return (
+              <li key={href} className="nav-mobile-item">
+                <button
+                  type="button"
+                  onClick={() => handleLink(href)}
+                  className={`w-full text-start font-black leading-none text-[clamp(3rem,12vw,6rem)] cursor-pointer transition-[color,opacity] duration-500 ease-out font-latin ${
+                    isActive
+                      ? "text-[#c9a96e]"
+                      : "text-[#f5f2ed]/70 hover:text-[#f5f2ed]"
+                  }`}
+                >
+                  {t("nav", key)}
+                </button>
+              </li>
+            );
+          })}
         </ul>
 
-        {/* Contact detail */}
+        {/* Footer: Get in touch + lang toggle */}
         <div className="mt-14 border-t border-[#f5f2ed]/10 pt-8 nav-mobile-footer">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#c9a96e] mb-3">
-            Get in touch
-          </p>
+          <div className="flex items-center justify-between mb-5">
+            <p className="text-xs uppercase tracking-[0.3em] text-[#c9a96e]">
+              {t("nav", "getInTouch")}
+            </p>
+            <button
+              type="button"
+              onClick={toggleLang}
+              aria-label={lang === "en" ? "Switch to Arabic" : "Switch to English"}
+              className="text-[11px] tracking-[0.18em] font-medium border border-[#c9a96e]/30 text-[#c9a96e]/65 hover:text-[#c9a96e] hover:border-[#c9a96e]/65 rounded-full px-3.5 py-1.5 transition-all duration-300 cursor-pointer font-latin"
+            >
+              {t("nav", "langToggle")}
+            </button>
+          </div>
           <a
             href="mailto:Info@iwin-sa.com"
-            className="text-lg font-medium text-[#f5f2ed] hover:text-[#c9a96e] transition-colors duration-300"
+            className="text-lg font-medium text-[#f5f2ed] hover:text-[#c9a96e] transition-colors duration-300 font-latin"
           >
             Info@iwin-sa.com
           </a>

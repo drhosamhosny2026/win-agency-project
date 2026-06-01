@@ -17,3 +17,11 @@ export function lenisScrollTo(href: string, offset = -80) {
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   }
 }
+
+export function lenisStop() {
+  instance?.stop();
+}
+
+export function lenisStart() {
+  instance?.start();
+}
