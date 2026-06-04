@@ -4,13 +4,13 @@ export const translations = {
 
   /* ─── Hero ─────────────────────────────────────────────────────────── */
   hero: {
-    brand:   { ar: "WIN",                       en: "WIN"                        },
-    tagline: { ar: "وكالة تسويق إبداعية",       en: "Creative Marketing Agency"  },
-    cta:     { ar: "لنفُز",                     en: "Let's Win"                  },
-    scroll:  { ar: "اسحب",                      en: "Scroll"                     },
+    brand:   { ar: "WIN",                       en: "WIN"                          },
+    tagline: { ar: "وكالة تسويق إبداعية",       en: "Creative Marketing Agency"    },
+    cta:     { ar: "لنفُز",                     en: "Let's Win"                    },
+    scroll:  { ar: "اسحب",                      en: "Scroll"                       },
     h1: {
-      ar: "WIN — وكالة تسويق إبداعي وإنتاج في الرياض",
-      en: "WIN — Creative Marketing & Production Agency in Riyadh",
+      ar: "WIN Solutions — التسويق الإبداعي والإنتاج في الرياض",
+      en: "WIN Solutions — Creative Marketing & Production in Riyadh",
     },
   },
 
@@ -27,13 +27,33 @@ export const translations = {
 
   /* ─── Services ──────────────────────────────────────────────────────── */
   services: {
-    eyebrow: { ar: "خدماتنا",                       en: "Our Services"                        },
-    heading: { ar: "حلول إبداعية مصمّمة للأثر",      en: "Creative Solutions Built For Impact" },
-    items: [
-      { ar: "الإنتاج الفني",                         en: "Artistic Production"                 },
-      { ar: "الإنتاج المرئي",                        en: "Visual Production"                   },
-      { ar: "الحملات التسويقية الإبداعية",            en: "Creative Marketing Campaigns"        },
-      { ar: "استقطاب المواهب",                       en: "Talent Acquisition"                  },
+    eyebrow: { ar: "خدماتنا",                      en: "Our Services"                        },
+    heading: { ar: "حلول إبداعية مصمّمة للأثر",     en: "Creative Solutions Built For Impact" },
+    groups: [
+      {
+        label: { ar: "الاستراتيجية والإبداع",       en: "Strategy & Creative"                },
+        items: [
+          { ar: "حلول تسويقية متكاملة",             en: "Integrated Marketing Solutions"     },
+          { ar: "حملات إبداعية",                    en: "Creative Campaigns"                 },
+          { ar: "التوجيه الإبداعي",                 en: "Creative Direction"                 },
+        ],
+      },
+      {
+        label: { ar: "الإنتاج",                     en: "Production"                         },
+        items: [
+          { ar: "إنتاج موسيقي",                    en: "Music Production"                   },
+          { ar: "إنتاج مرئي",                      en: "Visual Production"                  },
+        ],
+      },
+      {
+        label: { ar: "المواهب وتفعيل العلامات",      en: "Talent & Brand Activation"          },
+        items: [
+          { ar: "شراكات المواهب وسفراء العلامات",   en: "Talent Partnerships – Celebrity & Brand Ambassadors" },
+          { ar: "تسويق المؤثرين",                  en: "Influencer Marketing"               },
+          { ar: "تسويق العلامات الفاخرة",           en: "Luxury Brand Marketing"             },
+          { ar: "الرعايات والشراكات الاستراتيجية",  en: "Sponsorships & Strategic Partnerships" },
+        ],
+      },
     ],
   },
 
@@ -110,18 +130,18 @@ export const translations = {
       ar: "شاركنا رؤيتك — نحوّلها إلى تجربة لا تُنسى، من الإنتاج إلى التسويق.",
       en: "Share your vision — we'll turn it into something unforgettable, from production to marketing.",
     },
-    cta:         { ar: "ابدأ مشروعك",          en: "Start Your Project"   },
-    modalTitle:  { ar: "ابدأ رحلتك مع WIN",    en: "Start Your Journey"   },
-    formName:    { ar: "الاسم الكامل",          en: "Full Name"            },
-    formPhone:   { ar: "رقم الهاتف",            en: "Phone Number"         },
-    formEmail:   { ar: "البريد الإلكتروني",     en: "Email Address"        },
-    formCompany: { ar: "اسم الشركة أو المشروع", en: "Company / Project"    },
-    formSubmit:  { ar: "إرسال الطلب",           en: "Send Request"         },
-    location:    { ar: "الموقع",               en: "Location"             },
+    cta:         { ar: "ابدأ مشروعك",          en: "Start Your Project"      },
+    modalTitle:  { ar: "ابدأ رحلتك مع WIN",    en: "Start Your Journey"      },
+    formName:    { ar: "الاسم الكامل",          en: "Full Name"               },
+    formPhone:   { ar: "رقم الهاتف",            en: "Phone Number"            },
+    formEmail:   { ar: "البريد الإلكتروني",     en: "Email Address"           },
+    formCompany: { ar: "اسم الشركة أو المشروع", en: "Company / Project"       },
+    formSubmit:  { ar: "إرسال الطلب",           en: "Send Request"            },
+    location:    { ar: "الموقع",               en: "Location"                },
     locationVal: { ar: "الرياض، المملكة العربية السعودية", en: "Riyadh, Saudi Arabia" },
-    email:       { ar: "البريد الإلكتروني",    en: "Email"                },
-    phone:       { ar: "الهاتف",               en: "Phone"                },
-    rights:      { ar: "جميع الحقوق محفوظة.",  en: "All rights reserved." },
+    email:       { ar: "البريد الإلكتروني",    en: "Email"                   },
+    phone:       { ar: "الهاتف",               en: "Phone"                   },
+    rights:      { ar: "جميع الحقوق محفوظة.",  en: "All rights reserved."    },
   },
 
 } as const;

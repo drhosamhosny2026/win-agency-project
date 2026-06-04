@@ -47,7 +47,7 @@ export default function Footer() {
       {/* Copyright bar */}
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-[#f5f2ed]/20 text-[11px] tracking-[0.14em]">
         <span className="font-latin">
-          © {new Date().getFullYear()} WIN Agency. {t("contact", "rights")}
+          © {new Date().getFullYear()} WIN Solutions. {t("contact", "rights")}
         </span>
         <span className="text-[#c9a96e]/30 font-latin">Riyadh · KSA</span>
       </div>

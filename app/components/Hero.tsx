@@ -71,10 +71,9 @@ export default function Hero() {
         <div ref={logoRef}>
           <Image
             src="/logo.png"
-            alt="WIN Agency"
-            width={0}
-            height={0}
-            sizes="220px"
+            alt="WIN Solutions"
+            width={220}
+            height={88}
             className="w-auto h-32 md:h-44"
             priority
           />

@@ -100,15 +100,14 @@ export default function Navbar() {
         <button
           type="button"
           onClick={() => handleLink("#home")}
-          aria-label="WIN Agency – back to top"
+          aria-label="WIN Solutions – back to top"
           className="cursor-pointer p-0 bg-transparent border-0 appearance-none hover:opacity-80 transition-opacity duration-300"
         >
           <Image
             src="/logo.png"
-            alt="WIN Agency"
-            width={0}
-            height={0}
-            sizes="80px"
+            alt="WIN Solutions"
+            width={100}
+            height={40}
             className="block h-[40px] w-auto mix-blend-screen"
             priority
           />

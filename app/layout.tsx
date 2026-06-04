@@ -5,7 +5,7 @@ import "./globals.css";
 import SmoothScroll from "./components/SmoothScroll";
 import { LanguageProvider } from "@/context/LanguageContext";
 
-// ─── Update this to the live domain when deployed ───────────────────────────
+// ─── Update to live domain when deployed ────────────────────────────────────
 const BASE_URL = "https://iwin-sa.com";
 
 const dmSans = DM_Sans({
@@ -19,20 +19,20 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
 
   title: {
-    default: "WIN | Creative Marketing & Production Agency in Riyadh",
-    template: "%s | WIN Agency",
+    default: "WIN Solutions | Creative Marketing & Production in Riyadh",
+    template: "%s | WIN Solutions",
   },
   description:
-    "WIN is a Saudi creative marketing and production agency headquartered in Riyadh. We specialize in artistic & visual production, creative campaigns, talent acquisition, and strategic brand partnerships.",
+    "WIN Solutions is a Saudi creative marketing and production company headquartered in Riyadh. We specialize in visual production, creative campaigns, talent acquisition, and strategic brand partnerships.",
   keywords: [
-    "creative agency riyadh",
-    "marketing agency saudi arabia",
+    "creative solutions riyadh",
+    "marketing solutions saudi arabia",
     "visual production riyadh",
     "talent acquisition saudi arabia",
     "creative marketing campaigns",
-    "WIN agency",
-    "وكالة تسويق السعودية",
-    "وكالة إبداعية الرياض",
+    "WIN solutions",
+    "حلول تسويقية السعودية",
+    "شركة إبداعية الرياض",
     "إنتاج مرئي الرياض",
     "استقطاب مواهب",
   ],
@@ -40,16 +40,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: BASE_URL,
-    siteName: "WIN Agency",
-    title: "WIN | Creative Marketing & Production Agency in Riyadh",
+    siteName: "WIN Solutions",
+    title: "WIN Solutions | Creative Marketing & Production in Riyadh",
     description:
-      "A Saudi creative agency specializing in artistic production, visual content, creative campaigns, and talent acquisition — headquartered in Riyadh.",
+      "A Saudi creative company specializing in artistic production, visual content, creative campaigns, and talent acquisition — headquartered in Riyadh.",
     images: [
       {
         url: "/logo.png",
         width: 800,
         height: 600,
-        alt: "WIN Agency — Creative Marketing & Production",
+        alt: "WIN Solutions — Creative Marketing & Production",
       },
     ],
     locale: "en_US",
@@ -57,9 +57,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "WIN | Creative Marketing & Production Agency in Riyadh",
+    title: "WIN Solutions | Creative Marketing & Production in Riyadh",
     description:
-      "A Saudi creative agency specializing in artistic production, visual content, creative campaigns, and talent acquisition — headquartered in Riyadh.",
+      "A Saudi creative company specializing in artistic production, visual content, creative campaigns, and talent acquisition — headquartered in Riyadh.",
     images: ["/logo.png"],
   },
 
@@ -87,11 +87,11 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "WIN Agency",
+  name: "WIN Solutions",
   url: BASE_URL,
   logo: `${BASE_URL}/logo.png`,
   description:
-    "WIN is a Saudi creative marketing and production agency headquartered in Riyadh, founded in 2023.",
+    "WIN Solutions is a Saudi creative marketing and production company headquartered in Riyadh, founded in 2023.",
   foundingDate: "2023",
   address: {
     "@type": "PostalAddress",
@@ -118,14 +118,24 @@ const jsonLd = {
   ],
 };
 
+// Inline script: reads localStorage before first paint to prevent lang/dir FOUC
+const langInitScript = `(function(){try{var l=localStorage.getItem('lang');if(l==='ar'){document.documentElement.lang='ar';document.documentElement.dir='rtl';}}catch(e){}})();`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${rakik.variable} antialiased`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${dmSans.variable} ${rakik.variable} antialiased`}
+    >
       <body className="bg-[#050505] text-[#f5f2ed]">
+        {/* Runs synchronously before React hydrates — prevents Arabic FOUC */}
+        <script dangerouslySetInnerHTML={{ __html: langInitScript }} />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

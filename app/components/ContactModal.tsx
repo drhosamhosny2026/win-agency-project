@@ -59,8 +59,7 @@ export default function ContactModal({ onClose }: Props) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: connect to backend / email service
-    console.log("WIN Contact Form:", { name, phone, email, company });
+    // TODO: connect to backend / email service (Resend, EmailJS, etc.)
   };
 
   const inputCls =
@@ -155,7 +154,7 @@ export default function ContactModal({ onClose }: Props) {
 
           <button
             type="submit"
-            className="mt-3 w-full bg-[#c9a96e] text-[#050505] font-bold text-[11px] tracking-[0.25em] uppercase rounded-full py-[15px] hover:bg-[#f5f2ed] transition-colors duration-400 cursor-pointer"
+            className="mt-3 w-full bg-[#c9a96e] text-[#050505] font-bold text-[11px] tracking-[0.25em] uppercase rounded-full py-[15px] hover:bg-[#f5f2ed] transition-colors duration-[400ms] cursor-pointer"
           >
             {t("contact", "formSubmit")}
           </button>
