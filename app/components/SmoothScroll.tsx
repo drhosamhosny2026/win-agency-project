@@ -15,7 +15,7 @@ export default function SmoothScroll() {
     // Touch devices have native momentum scroll — Lenis adds overhead without benefit
     if (window.matchMedia("(hover: none) and (pointer: coarse)").matches) return;
 
-    const lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
+    const lenis = new Lenis({ lerp: 0.08, smoothWheel: true });
 
     setLenisInstance(lenis);
     lenis.on("scroll", () => ScrollTrigger.update());

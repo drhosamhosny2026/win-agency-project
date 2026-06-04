@@ -1,57 +1,30 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useCallback, useRef, useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import ContactModal from "./ContactModal";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useReveal } from "@/lib/useReveal";
 
 export default function Contact() {
   const { t } = useLanguage();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const sectionRef  = useRef<HTMLElement>(null);
-  const eyebrowRef  = useRef<HTMLParagraphElement>(null);
-  const headingRef  = useRef<HTMLHeadingElement>(null);
-  const subtextRef  = useRef<HTMLParagraphElement>(null);
-  const ctaRef      = useRef<HTMLButtonElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const eyebrowRef = useRef<HTMLParagraphElement>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const subtextRef = useRef<HTMLParagraphElement>(null);
+  const ctaRef     = useRef<HTMLButtonElement>(null);
 
   const openModal  = useCallback(() => setIsModalOpen(true),  []);
   const closeModal = useCallback(() => setIsModalOpen(false), []);
 
-  useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    const ctx = gsap.context(() => {
-      gsap.from(eyebrowRef.current, {
-        y: 20, opacity: 0, duration: 0.9, ease: "power3.out",
-        clearProps: "transform,opacity",
-        scrollTrigger: { trigger: sectionRef.current, start: "top 80%" },
-      });
-
-      gsap.from(headingRef.current, {
-        y: 80, opacity: 0, duration: 1.5, ease: "power4.out",
-        clearProps: "transform,opacity",
-        scrollTrigger: { trigger: sectionRef.current, start: "top 78%" },
-      });
-
-      gsap.from(subtextRef.current, {
-        y: 28, opacity: 0, duration: 1.0, ease: "power3.out",
-        clearProps: "transform,opacity",
-        scrollTrigger: { trigger: subtextRef.current, start: "top 88%" },
-      });
-
-      gsap.from(ctaRef.current, {
-        y: 24, opacity: 0, duration: 0.9, ease: "power2.out",
-        clearProps: "transform,opacity",
-        scrollTrigger: { trigger: ctaRef.current, start: "top 92%" },
-      });
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
+  useReveal({
+    sectionRef,
+    eyebrowRef,
+    headingRef,
+    contentRefs: [subtextRef, ctaRef],
+    triggerStart: "top 80%",
+  });
 
   return (
     <>
@@ -60,22 +33,18 @@ export default function Contact() {
         ref={sectionRef}
         className="relative bg-[#0a0a0a] min-h-[88vh] flex flex-col items-center justify-center py-40 px-8 md:px-16 overflow-hidden text-center"
       >
-        {/* Top separator */}
         <div className="absolute top-0 left-0 right-0 h-px bg-[#c9a96e]/20" />
 
-        {/* Ambient center glow */}
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
           <div className="w-[900px] h-[900px] rounded-full bg-[#c9a96e]/[0.038] blur-[180px]" />
         </div>
 
-        {/* Decorative "◆" watermark */}
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
           <span className="text-[clamp(20rem,55vw,48rem)] font-black text-[#f5f2ed]/[0.016] select-none leading-none font-latin">
             ◆
           </span>
         </div>
 
-        {/* Content */}
         <div className="relative z-10 flex flex-col items-center max-w-4xl">
           <p
             ref={eyebrowRef}

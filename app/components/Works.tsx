@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { content, getClientById, getMediaById } from "@/lib/content";
 import ExpandedPlayer from "./ExpandedPlayer";
 import { useLanguage } from "@/context/LanguageContext";
+import { useReveal } from "@/lib/useReveal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -36,27 +37,20 @@ export default function Works() {
   const featuredItems = content.work.items.filter((w) => w.featured);
   const archiveItems  = content.work.items.filter((w) => !w.featured);
 
+  // Unified heading reveal
+  useReveal({ sectionRef, eyebrowRef, headingRef });
+
+  // Content animations — featured cards, archive label, archive grid
   useEffect(() => {
+    if (typeof window === "undefined") return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const ctx = gsap.context(() => {
-      gsap.from(eyebrowRef.current, {
-        y: 20, opacity: 0, duration: 0.9, ease: "power3.out",
-        clearProps: "transform,opacity",
-        scrollTrigger: { trigger: sectionRef.current, start: "top 78%" },
-      });
-
-      gsap.from(headingRef.current, {
-        y: 56, opacity: 0, duration: 1.2, ease: "power3.out",
-        clearProps: "transform,opacity",
-        scrollTrigger: { trigger: sectionRef.current, start: "top 75%" },
-      });
-
       if (featuredRef.current) {
         gsap.from(featuredRef.current.querySelectorAll("article"), {
           y: 64, opacity: 0, duration: 1.1, ease: "power3.out",
           stagger: 0.15, clearProps: "transform,opacity",
-          scrollTrigger: { trigger: featuredRef.current, start: "top 80%" },
+          scrollTrigger: { trigger: featuredRef.current, start: "top 80%", once: true },
         });
       }
 
@@ -64,7 +58,7 @@ export default function Works() {
         gsap.from(archiveLabelRef.current, {
           y: 20, opacity: 0, duration: 0.8, ease: "power2.out",
           clearProps: "transform,opacity",
-          scrollTrigger: { trigger: archiveLabelRef.current, start: "top 85%" },
+          scrollTrigger: { trigger: archiveLabelRef.current, start: "top 85%", once: true },
         });
       }
 
@@ -72,7 +66,7 @@ export default function Works() {
         gsap.from(archiveRef.current.querySelectorAll("article"), {
           y: 40, opacity: 0, duration: 0.85, ease: "power2.out",
           stagger: 0.08, clearProps: "transform,opacity",
-          scrollTrigger: { trigger: archiveRef.current, start: "top 82%" },
+          scrollTrigger: { trigger: archiveRef.current, start: "top 82%", once: true },
         });
       }
     }, sectionRef);
@@ -88,7 +82,6 @@ export default function Works() {
     const client       = work.clientId ? getClientById(work.clientId) : null;
     const primaryMedia = work.mediaIds[0] ? getMediaById(work.mediaIds[0]) : null;
 
-    // Project names are Latin brand names — always English in both languages
     const title =
       "displayTitle" in work && work.displayTitle
         ? (work.displayTitle as { en: string }).en
@@ -167,7 +160,6 @@ export default function Works() {
             )}
           </div>
 
-          {/* Metadata — RTL: use text-start/text-end (logical) */}
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 md:gap-8">
             <div className="flex-1">
               <h3 className="text-2xl md:text-4xl lg:text-5xl font-black leading-tight mb-3 text-[#f5f2ed] font-latin">
@@ -177,17 +169,12 @@ export default function Works() {
                 {work.categories.join(" · ")}
               </p>
             </div>
-
             {client && (
               <div className="text-start md:text-end">
                 <p className="text-base md:text-lg text-[#f5f2ed]/45 mb-2 font-latin">{client.name}</p>
                 {platformLabel && mediaUrl && (
-                  <a
-                    href={mediaUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block text-xs md:text-sm font-medium text-[#c9a96e] hover:text-[#f5f2ed] transition-colors duration-300"
-                  >
+                  <a href={mediaUrl} target="_blank" rel="noopener noreferrer"
+                    className="inline-block text-xs md:text-sm font-medium text-[#c9a96e] hover:text-[#f5f2ed] transition-colors duration-300">
                     {t("works", "viewOn")} {platformLabel}
                   </a>
                 )}
@@ -198,7 +185,6 @@ export default function Works() {
       );
     }
 
-    // ── Archive card ──────────────────────────────────────────────────────────
     return (
       <article key={work.id} className={`archive-work-${idx} group`}>
         {mediaUrl ? (
@@ -209,7 +195,7 @@ export default function Works() {
             className="block relative w-full overflow-hidden rounded-xl md:rounded-2xl bg-[#111111] mb-4 md:mb-6 border border-[#f5f2ed]/5 cursor-pointer appearance-none p-0"
           >
             <div className="relative aspect-[16/10] overflow-hidden">
-              <Image fill unoptimized src={cover} alt={title}
+              <Image fill src={cover} alt={title}
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:scale-[1.03]"
               />
@@ -225,27 +211,20 @@ export default function Works() {
         ) : (
           <div className="relative overflow-hidden rounded-xl md:rounded-2xl bg-[#111111] mb-4 md:mb-6 border border-[#f5f2ed]/5">
             <div className="relative aspect-[16/10] overflow-hidden">
-              <Image fill unoptimized src={cover} alt={title}
+              <Image fill src={cover} alt={title}
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:scale-[1.03]"
               />
             </div>
           </div>
         )}
-
         <div>
           <h4 className="text-lg md:text-xl font-bold mb-2 text-[#f5f2ed] font-latin">{title}</h4>
-          <p className="text-xs uppercase tracking-widest text-[#c9a96e] mb-2 font-latin">
-            {work.categories.join(" · ")}
-          </p>
+          <p className="text-xs uppercase tracking-widest text-[#c9a96e] mb-2 font-latin">{work.categories.join(" · ")}</p>
           {client && <p className="text-sm text-[#f5f2ed]/40 font-latin">{client.name}</p>}
           {platformLabel && mediaUrl && (
-            <a
-              href={mediaUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block text-xs font-medium text-[#c9a96e] hover:text-[#f5f2ed] transition-colors duration-300 mt-2"
-            >
+            <a href={mediaUrl} target="_blank" rel="noopener noreferrer"
+              className="inline-block text-xs font-medium text-[#c9a96e] hover:text-[#f5f2ed] transition-colors duration-300 mt-2">
               {t("works", "viewOn")} {platformLabel}
             </a>
           )}
