@@ -19,7 +19,6 @@ function LogoMark({ client }: { client: ClientLogoEntry }) {
           alt={client.alt}
           sizes="(max-width: 768px) 100px, 120px"
           className="object-contain object-center brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
-          unoptimized
         />
       </div>
     </figure>

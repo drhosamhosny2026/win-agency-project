@@ -9,4 +9,8 @@ export const rakik = localFont({
   ],
   variable: "--font-rakik",
   display: "swap",
+  // Rakik is only applied under [dir="rtl"] (Arabic mode).
+  // preload:false prevents the 4 OTF files (~413 KB) from being
+  // downloaded by English visitors who never trigger RTL layout.
+  preload: false,
 });
