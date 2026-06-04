@@ -57,8 +57,11 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    const sections = NAV_KEYS
-      .map(({ href }) => document.getElementById(href.slice(1)))
+    // Watch ALL page sections that have IDs, not just nav links
+    const ALL_IDS = ["home", "services", "works", "award", "about", "vision", "contact"];
+
+    const sections = ALL_IDS
+      .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null);
 
     if (!sections.length) return;

@@ -49,6 +49,7 @@ export default function Award() {
 
   return (
     <section
+      id="award"
       ref={sectionRef}
       className="relative bg-[#0a0a0a] text-[#f5f2ed] py-40 px-8 md:px-16 overflow-hidden"
     >

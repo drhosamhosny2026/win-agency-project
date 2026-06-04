@@ -29,8 +29,8 @@ function LogoMark({ client }: { client: ClientLogoEntry }) {
 function MarqueeRow({ logos, duplicate }: { logos: ClientLogoEntry[]; duplicate?: boolean }) {
   return (
     <div
-      className={`flex items-center ${duplicate ? "client-marquee-duplicate" : ""}`}
-      aria-hidden={duplicate ? true : undefined}
+      className={`flex items-center shrink-0 ${duplicate ? "client-marquee-duplicate" : ""}`}
+      aria-hidden={duplicate ? "true" : undefined}
     >
       {logos.map((client) => (
         <LogoMark key={`${client.id}${duplicate ? "-dup" : ""}`} client={client} />
@@ -68,7 +68,7 @@ export default function Clients() {
       gsap.from(marqueeRef.current, {
         opacity: 0, duration: 1.2, ease: "power2.out",
         clearProps: "opacity",
-        scrollTrigger: { trigger: marqueeRef.current, start: "top 88%" },
+        scrollTrigger: { trigger: marqueeRef.current, start: "top 88%", once: true },
       });
     }, sectionRef);
 
