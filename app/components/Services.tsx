@@ -61,11 +61,12 @@ export default function Services() {
         {t("services", "heading")}
       </h2>
 
-      <div ref={groupsRef} className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+      {/* items-stretch (default) makes all grid cells equal height */}
+      <div ref={groupsRef} className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {groups.map((group, gIdx) => (
           <div
             key={gIdx}
-            className="group relative bg-[#0d0d0d] rounded-[28px] p-8 md:p-10 border border-[#c9a96e]/12 hover:border-[#c9a96e]/30 transition-colors duration-500 overflow-hidden"
+            className="group relative h-full flex flex-col bg-[#0d0d0d] rounded-[28px] p-8 md:p-10 border border-[#c9a96e]/12 hover:border-[#c9a96e]/30 transition-colors duration-500 overflow-hidden"
           >
             {/* Corner glow on hover */}
             <div className="pointer-events-none absolute top-0 end-0 w-32 h-32 bg-[#c9a96e]/0 group-hover:bg-[#c9a96e]/[0.04] rounded-es-full transition-colors duration-700" />
@@ -83,8 +84,8 @@ export default function Services() {
             {/* Gold divider */}
             <div className="w-8 h-px bg-[#c9a96e]/35 mb-5" />
 
-            {/* Service items */}
-            <ul className="flex flex-col">
+            {/* Service items — flex-1 fills remaining card height */}
+            <ul className="flex flex-col flex-1">
               {group.items.map((item, iIdx) => (
                 <li
                   key={iIdx}

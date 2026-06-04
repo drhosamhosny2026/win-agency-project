@@ -5,7 +5,7 @@ export const translations = {
   /* ─── Hero ─────────────────────────────────────────────────────────── */
   hero: {
     brand:   { ar: "WIN",                       en: "WIN"                          },
-    tagline: { ar: "وكالة تسويق إبداعية",       en: "Creative Marketing Agency"    },
+    tagline: { ar: "تسويق وإنتاج إبداعي",        en: "Creative Marketing & Production" },
     cta:     { ar: "لنفُز",                     en: "Let's Win"                    },
     scroll:  { ar: "اسحب",                      en: "Scroll"                       },
     h1: {
@@ -19,6 +19,7 @@ export const translations = {
     home:       { ar: "الرئيسية",    en: "Home"         },
     services:   { ar: "خدماتنا",    en: "Services"     },
     work:       { ar: "أعمالنا",    en: "Work"         },
+    about:      { ar: "من نحن",     en: "About"        },
     contact:    { ar: "تواصل",      en: "Contact"      },
     cta:        { ar: "تحدّث معنا", en: "Let's Talk"   },
     getInTouch: { ar: "تواصل معنا", en: "Get in touch" },
