@@ -15,6 +15,7 @@ export default function Vision() {
   const eyebrowRef = useRef<HTMLParagraphElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const cardsRef   = useRef<HTMLDivElement>(null);
+  const glowRef    = useRef<HTMLDivElement>(null);
 
   useReveal({ sectionRef, eyebrowRef, headingRef });
 
@@ -23,6 +24,7 @@ export default function Vision() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const ctx = gsap.context(() => {
+      // Cards stagger
       if (cardsRef.current) {
         gsap.from(cardsRef.current.children, {
           y: 48, opacity: 0, duration: 1.0, ease: "power3.out",
@@ -30,7 +32,21 @@ export default function Vision() {
           scrollTrigger: { trigger: cardsRef.current, start: "top 82%", once: true },
         });
       }
-    }, cardsRef);
+
+      // Parallax on bottom glow (moves upward as you scroll down = depth)
+      if (glowRef.current) {
+        gsap.to(glowRef.current, {
+          yPercent: -18,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 2,
+          },
+        });
+      }
+    }, sectionRef);
 
     return () => ctx.revert();
   }, []);
@@ -42,7 +58,12 @@ export default function Vision() {
       className="relative bg-[#050505] py-36 px-8 md:px-16 overflow-hidden"
     >
       <div className="absolute top-0 left-8 right-8 md:left-16 md:right-16 h-px bg-[#c9a96e]/20" />
-      <div className="pointer-events-none absolute -bottom-40 left-1/2 -translate-x-1/2 w-[900px] h-[500px] rounded-full bg-[#c9a96e]/[0.025] blur-[160px]" />
+
+      {/* Parallaxed ambient glow */}
+      <div
+        ref={glowRef}
+        className="pointer-events-none absolute -bottom-40 left-1/2 -translate-x-1/2 w-[900px] h-[500px] rounded-full bg-[#c9a96e]/[0.025] blur-[160px]"
+      />
 
       <p ref={eyebrowRef} className="uppercase tracking-[0.35em] text-xs text-[#c9a96e] mb-8 flex items-center gap-4">
         <span className="block w-8 h-px bg-[#c9a96e]/60 shrink-0" />

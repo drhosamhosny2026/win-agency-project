@@ -17,29 +17,69 @@ const NAV_KEYS = [
 export default function Navbar() {
   const { t, lang, setLang } = useLanguage();
 
-  const navRef       = useRef<HTMLElement>(null);
-  const hamburgerRef = useRef<HTMLButtonElement>(null);
-  const overlayRef   = useRef<HTMLDivElement>(null);
+  const navRef        = useRef<HTMLElement>(null);
+  const logoRef       = useRef<HTMLButtonElement>(null);
+  const linksRef      = useRef<HTMLDivElement>(null);
+  const actionsRef    = useRef<HTMLDivElement>(null);
+  const hamburgerRef  = useRef<HTMLButtonElement>(null);
+  const overlayRef    = useRef<HTMLDivElement>(null);
+
   const [open,     setOpen]     = useState(false);
   const [active,   setActive]   = useState("home");
   const [scrolled, setScrolled] = useState(false);
 
   const toggleLang = () => setLang(lang === "en" ? "ar" : "en");
 
+  /* ── Staggered entrance: logo → links → actions ────────────────────── */
   useEffect(() => {
-    const nav = navRef.current;
-    if (!nav) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    gsap.set(nav, { y: -64, opacity: 0 });
-    const ctx = gsap.context(() => {
-      gsap.to(nav, {
-        y: 0, opacity: 1,
-        duration: 1.0, ease: "power3.out", delay: 0.15,
-        clearProps: "all",
-      });
+    const logo      = logoRef.current;
+    const links     = linksRef.current;
+    const actions   = actionsRef.current;
+    const hamburger = hamburgerRef.current;
+
+    if (!logo) return;
+
+    // Set everything invisible before first paint
+    gsap.set(logo, { y: -14, opacity: 0 });
+    if (links?.children.length)   gsap.set(links.children,   { y: -10, opacity: 0 });
+    if (actions?.children.length) gsap.set(actions.children, { y: -10, opacity: 0 });
+    if (hamburger)                gsap.set(hamburger,         { y: -10, opacity: 0 });
+
+    const tl = gsap.timeline({ delay: 0.15 });
+
+    tl.to(logo, {
+      y: 0, opacity: 1, duration: 0.65, ease: "power2.out",
+      clearProps: "transform,opacity",
     });
-    return () => { ctx.revert(); gsap.set(nav, { clearProps: "all" }); };
+
+    if (links?.children.length) {
+      tl.to(links.children, {
+        y: 0, opacity: 1, duration: 0.5, ease: "power2.out",
+        stagger: 0.05, clearProps: "transform,opacity",
+      }, "-=0.38");
+    }
+
+    if (actions?.children.length) {
+      tl.to(actions.children, {
+        y: 0, opacity: 1, duration: 0.45, ease: "power2.out",
+        stagger: 0.05, clearProps: "transform,opacity",
+      }, "-=0.28");
+    }
+
+    if (hamburger) {
+      tl.to(hamburger, {
+        y: 0, opacity: 1, duration: 0.5, ease: "power2.out",
+        clearProps: "transform,opacity",
+      }, "<");
+    }
+
+    return () => {
+      tl.kill();
+      const targets = [logo, links?.children, actions?.children, hamburger].filter(Boolean);
+      targets.forEach((t) => t && gsap.set(t, { clearProps: "all" }));
+    };
   }, []);
 
   useEffect(() => {
@@ -58,9 +98,7 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    // Watch ALL page sections that have IDs, not just nav links
     const ALL_IDS = ["home", "services", "works", "award", "about", "vision", "contact"];
-
     const sections = ALL_IDS
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null);
@@ -88,7 +126,6 @@ export default function Navbar() {
 
   return (
     <>
-      {/* ── Main bar ──────────────────────────────────────────────────────── */}
       <nav
         ref={navRef}
         className={`fixed top-0 left-0 w-full z-50 px-8 md:px-16 py-6 flex items-center justify-between transition-[background,box-shadow] duration-500 ${
@@ -99,6 +136,7 @@ export default function Navbar() {
       >
         {/* Logo */}
         <button
+          ref={logoRef}
           type="button"
           onClick={() => handleLink("#home")}
           aria-label="WIN Solutions – back to top"
@@ -115,7 +153,7 @@ export default function Navbar() {
         </button>
 
         {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-10 text-sm font-medium">
+        <div ref={linksRef} className="hidden md:flex items-center gap-10 text-sm font-medium">
           {NAV_KEYS.map(({ key, href }) => {
             const id = href.slice(1);
             const isActive = active === id;
@@ -131,7 +169,6 @@ export default function Navbar() {
                 }`}
               >
                 {t("nav", key)}
-                {/* Underline — RTL: expand from inline-end */}
                 <span
                   className={`absolute bottom-0 ltr:left-0 rtl:right-0 h-px w-full bg-[#c9a96e] ltr:origin-left rtl:origin-right transition-transform duration-500 ease-out ${
                     isActive ? "scale-x-100" : "scale-x-0"
@@ -143,7 +180,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop right: lang toggle + CTA */}
-        <div className="hidden md:flex items-center gap-4">
+        <div ref={actionsRef} className="hidden md:flex items-center gap-4">
           <button
             type="button"
             onClick={toggleLang}
@@ -192,7 +229,6 @@ export default function Navbar() {
       >
         <div className="absolute top-0 left-10 right-10 h-px bg-[#c9a96e]/20" />
 
-        {/* Nav items — text-start for RTL support */}
         <ul className="flex flex-col gap-2" role="list">
           {NAV_KEYS.map(({ key, href }) => {
             const isActive = active === href.slice(1);
@@ -202,9 +238,7 @@ export default function Navbar() {
                   type="button"
                   onClick={() => handleLink(href)}
                   className={`w-full text-start font-black leading-none text-[clamp(3rem,12vw,6rem)] cursor-pointer transition-[color,opacity] duration-500 ease-out font-latin ${
-                    isActive
-                      ? "text-[#c9a96e]"
-                      : "text-[#f5f2ed]/70 hover:text-[#f5f2ed]"
+                    isActive ? "text-[#c9a96e]" : "text-[#f5f2ed]/70 hover:text-[#f5f2ed]"
                   }`}
                 >
                   {t("nav", key)}
@@ -214,7 +248,6 @@ export default function Navbar() {
           })}
         </ul>
 
-        {/* Footer: Get in touch + lang toggle */}
         <div className="mt-14 border-t border-[#f5f2ed]/10 pt-8 nav-mobile-footer">
           <div className="flex items-center justify-between mb-5">
             <p className="text-xs uppercase tracking-[0.3em] text-[#c9a96e]">

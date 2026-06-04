@@ -16,9 +16,11 @@ export default function About() {
   const headingRef = useRef<HTMLHeadingElement>(null);
   const bodyRef    = useRef<HTMLParagraphElement>(null);
   const statsRef   = useRef<HTMLDivElement>(null);
+  const glowRef    = useRef<HTMLDivElement>(null);
 
   useReveal({ sectionRef, eyebrowRef, headingRef, contentRefs: [bodyRef] });
 
+  // Stats stagger
   useEffect(() => {
     if (typeof window === "undefined") return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -31,7 +33,21 @@ export default function About() {
           scrollTrigger: { trigger: statsRef.current, start: "top 88%", once: true },
         });
       }
-    }, statsRef);
+
+      // Parallax on corner glow
+      if (glowRef.current) {
+        gsap.to(glowRef.current, {
+          yPercent: -22,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 2,
+          },
+        });
+      }
+    }, sectionRef);
 
     return () => ctx.revert();
   }, []);
@@ -43,7 +59,13 @@ export default function About() {
       className="relative bg-[#0a0a0a] py-36 px-8 md:px-16 overflow-hidden"
     >
       <div className="absolute top-0 left-8 right-8 md:left-16 md:right-16 h-px bg-[#c9a96e]/20" />
-      <div className="pointer-events-none absolute -top-40 end-0 w-[700px] h-[700px] rounded-full bg-[#c9a96e]/[0.03] blur-[180px]" />
+
+      {/* Parallaxed ambient glow */}
+      <div
+        ref={glowRef}
+        className="pointer-events-none absolute -top-40 end-0 w-[700px] h-[700px] rounded-full bg-[#c9a96e]/[0.03] blur-[180px]"
+      />
+
       <div className="pointer-events-none absolute bottom-0 start-0 translate-y-[30%] text-[clamp(8rem,28vw,20rem)] font-black text-[#f5f2ed]/[0.018] select-none leading-none font-latin">
         WIN
       </div>

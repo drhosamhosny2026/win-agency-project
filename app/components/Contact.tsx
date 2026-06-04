@@ -1,9 +1,13 @@
 "use client";
 
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLanguage } from "@/context/LanguageContext";
 import ContactModal from "./ContactModal";
 import { useReveal } from "@/lib/useReveal";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Contact() {
   const { t } = useLanguage();
@@ -14,6 +18,7 @@ export default function Contact() {
   const headingRef = useRef<HTMLHeadingElement>(null);
   const subtextRef = useRef<HTMLParagraphElement>(null);
   const ctaRef     = useRef<HTMLButtonElement>(null);
+  const glowRef    = useRef<HTMLDivElement>(null);
 
   const openModal  = useCallback(() => setIsModalOpen(true),  []);
   const closeModal = useCallback(() => setIsModalOpen(false), []);
@@ -26,6 +31,29 @@ export default function Contact() {
     triggerStart: "top 80%",
   });
 
+  // Parallax on center glow
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const ctx = gsap.context(() => {
+      if (glowRef.current) {
+        gsap.to(glowRef.current, {
+          yPercent: -16,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 2,
+          },
+        });
+      }
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <>
       <section
@@ -35,7 +63,11 @@ export default function Contact() {
       >
         <div className="absolute top-0 left-0 right-0 h-px bg-[#c9a96e]/20" />
 
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+        {/* Parallaxed center glow */}
+        <div
+          ref={glowRef}
+          className="pointer-events-none absolute inset-0 flex items-center justify-center"
+        >
           <div className="w-[900px] h-[900px] rounded-full bg-[#c9a96e]/[0.038] blur-[180px]" />
         </div>
 

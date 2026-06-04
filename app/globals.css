@@ -104,6 +104,11 @@ h6 {
   animation-play-state: paused;
 }
 
+/* —— Text marquee belt — pause on hover —— */
+.text-marquee-viewport:hover .text-marquee-track {
+  animation-play-state: paused;
+}
+
 /* —— Video modal fade mask — 4-edge gradient vignette —— */
 .video-fade-mask {
   -webkit-mask-image:
