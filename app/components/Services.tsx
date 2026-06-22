@@ -77,7 +77,7 @@ export default function Services() {
         {t("services", "eyebrow")}
       </p>
 
-      <h2 ref={headingRef} className="text-5xl md:text-7xl font-black mb-20 max-w-4xl text-[#f5f2ed]">
+      <h2 key={lang} ref={headingRef} className="text-5xl md:text-7xl font-black mb-20 max-w-4xl text-[#f5f2ed]">
         {t("services", "heading")}
       </h2>
 

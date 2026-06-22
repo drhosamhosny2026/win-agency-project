@@ -104,7 +104,7 @@ const jsonLd = {
       "@type": "ContactPoint",
       telephone: "+966-59-438-1935",
       contactType: "customer service",
-      email: "Info@iwin-sa.com",
+      email: "info@iwin-sa.com",
       areaServed: "SA",
       availableLanguage: ["Arabic", "English"],
     },

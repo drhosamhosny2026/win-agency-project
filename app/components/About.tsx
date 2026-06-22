@@ -9,7 +9,7 @@ import { useReveal } from "@/lib/useReveal";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
   const sectionRef = useRef<HTMLElement>(null);
   const eyebrowRef = useRef<HTMLParagraphElement>(null);
@@ -78,6 +78,7 @@ export default function About() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-28 items-start relative z-10">
         <div>
           <h2
+            key={lang}
             ref={headingRef}
             className="text-5xl md:text-7xl xl:text-[88px] font-black leading-[0.9] text-[#f5f2ed]"
           >

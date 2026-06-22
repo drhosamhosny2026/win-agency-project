@@ -54,6 +54,7 @@ export default function Award() {
       </p>
 
       <h2
+        key={lang}
         ref={headingRef}
         className="text-3xl md:text-6xl font-black leading-snug max-w-4xl text-[#f5f2ed]"
       >

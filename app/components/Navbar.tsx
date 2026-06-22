@@ -263,10 +263,10 @@ export default function Navbar() {
             </button>
           </div>
           <a
-            href="mailto:Info@iwin-sa.com"
+            href="mailto:info@iwin-sa.com"
             className="text-lg font-medium text-[#f5f2ed] hover:text-[#c9a96e] transition-colors duration-300 font-latin"
           >
-            Info@iwin-sa.com
+            info@iwin-sa.com
           </a>
         </div>
       </div>

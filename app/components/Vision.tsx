@@ -9,7 +9,7 @@ import { useReveal } from "@/lib/useReveal";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Vision() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
   const sectionRef = useRef<HTMLElement>(null);
   const eyebrowRef = useRef<HTMLParagraphElement>(null);
@@ -70,7 +70,7 @@ export default function Vision() {
         {t("vision", "eyebrow")}
       </p>
 
-      <h2 ref={headingRef} className="text-5xl md:text-7xl font-black mb-16 max-w-4xl text-[#f5f2ed]">
+      <h2 key={lang} ref={headingRef} className="text-5xl md:text-7xl font-black mb-16 max-w-4xl text-[#f5f2ed]">
         {t("vision", "heading")}
       </h2>
 

@@ -22,7 +22,7 @@ const CATEGORY_COVERS: Record<string, string> = {
 };
 
 export default function Works() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
   const [expandedCard, setExpandedCard] = useState<ExpandedCard | null>(null);
   const handleCardClose = useCallback(() => setExpandedCard(null), []);
@@ -243,7 +243,7 @@ export default function Works() {
           {t("works", "eyebrow")}
         </p>
 
-        <h2 ref={headingRef} className="text-5xl md:text-7xl font-black mb-20 max-w-4xl text-[#f5f2ed]">
+        <h2 key={lang} ref={headingRef} className="text-5xl md:text-7xl font-black mb-20 max-w-4xl text-[#f5f2ed]">
           {t("works", "heading")}
         </h2>
 
