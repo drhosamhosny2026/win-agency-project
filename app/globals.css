@@ -84,12 +84,8 @@ h6 {
 
 /* —— Client logo marquee (luxury, calm) —— */
 @keyframes marquee-luxury {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-50%, 0, 0);
-  }
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-25%, 0, 0); }
 }
 
 .client-marquee-track {
@@ -98,6 +94,12 @@ h6 {
   align-items: center;
   animation: marquee-luxury 65s linear infinite;
   will-change: transform;
+}
+
+/* Force LTR scroll axis — keeps seamless loop correct under [dir="rtl"] */
+.client-marquee-viewport,
+.text-marquee-viewport {
+  direction: ltr;
 }
 
 .client-marquee-viewport:hover .client-marquee-track {
@@ -153,7 +155,7 @@ h6 {
 /* —— Text marquee belt —— */
 @keyframes marquee-text-flow {
   from { transform: translate3d(0, 0, 0); }
-  to   { transform: translate3d(-50%, 0, 0); }
+  to   { transform: translate3d(-25%, 0, 0); }
 }
 
 .text-marquee-track {
@@ -181,6 +183,20 @@ h6 {
   }
 
   .client-marquee-duplicate {
+    display: none;
+  }
+
+  .text-marquee-track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 0.5rem 2rem;
+    padding-inline: 1.5rem;
+  }
+
+  /* hide the 3 duplicate text sets */
+  .text-marquee-track > div:not(:first-child) {
     display: none;
   }
 

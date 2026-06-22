@@ -108,9 +108,11 @@ export default function Clients() {
           aria-hidden
         />
 
-        <div className="client-marquee-viewport overflow-hidden py-2 md:py-4">
+        <div className="client-marquee-viewport overflow-hidden py-2 md:py-4" dir="ltr">
           <div className="client-marquee-track gap-0">
             <MarqueeRow logos={logos} />
+            <MarqueeRow logos={logos} duplicate />
+            <MarqueeRow logos={logos} duplicate />
             <MarqueeRow logos={logos} duplicate />
           </div>
         </div>

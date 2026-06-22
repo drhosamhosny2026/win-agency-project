@@ -27,10 +27,13 @@ export default function Marquee() {
       <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 md:w-32 bg-gradient-to-r from-[#050505] to-transparent" />
       <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 md:w-32 bg-gradient-to-l from-[#050505] to-transparent" />
 
-      <div className="text-marquee-viewport overflow-hidden">
+      <div className="text-marquee-viewport overflow-hidden" dir="ltr">
         <div className="text-marquee-track flex items-center">
-          <div className="flex items-center shrink-0">{renderSet("a")}</div>
-          <div className="flex items-center shrink-0">{renderSet("b")}</div>
+          {(["a", "b", "c", "d"] as const).map((k) => (
+            <div key={k} className="flex items-center shrink-0">
+              {renderSet(k)}
+            </div>
+          ))}
         </div>
       </div>
     </div>
