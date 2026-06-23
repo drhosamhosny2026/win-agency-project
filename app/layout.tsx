@@ -4,6 +4,7 @@ import { rakik } from "@/lib/fonts";
 import "./globals.css";
 import SmoothScroll from "./components/SmoothScroll";
 import { LanguageProvider } from "@/context/LanguageContext";
+import { Analytics } from "@vercel/analytics/next";
 
 // ─── Update to live domain when deployed ────────────────────────────────────
 const BASE_URL = "https://iwin-sa.com";
@@ -144,6 +145,7 @@ export default function RootLayout({
         <LanguageProvider>
           {children}
         </LanguageProvider>
+        <Analytics />
       </body>
     </html>
   );
