@@ -154,7 +154,7 @@ export default function Works() {
                 </div>
               </button>
             ) : (
-              <div className="relative aspect-video md:aspect-[16/9] lg:h-[70vh] overflow-hidden">
+              <div className="relative w-full aspect-video md:aspect-[16/9] lg:h-[70vh] overflow-hidden">
                 <Image fill src={cover} alt={title}
                   sizes="(max-width: 768px) 100vw, 90vw"
                   className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:scale-[1.03]"
