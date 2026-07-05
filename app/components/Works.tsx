@@ -90,8 +90,12 @@ export default function Works() {
     let cover: string;
     if (primaryMedia?.platform === "youtube" && primaryMedia.youtubeId) {
       cover = `https://img.youtube.com/vi/${primaryMedia.youtubeId}/hqdefault.jpg`;
-    } else if (work.id === "work-eid-song") {
-      cover = "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=900&auto=format&fit=crop&q=75";
+    } else if (
+      work.id === "work-eid-song" ||
+      work.id === "work-event-gea" ||
+      work.id === "work-event-half-million"
+    ) {
+      cover = `${work.assetsPath}/cover.jpg`;
     } else {
       cover = CATEGORY_COVERS[work.category] ?? `${work.assetsPath}/cover.jpg`;
     }
