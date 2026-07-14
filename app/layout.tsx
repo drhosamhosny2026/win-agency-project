@@ -6,7 +6,6 @@ import SmoothScroll from "./components/SmoothScroll";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { Analytics } from "@vercel/analytics/next";
 
-// ─── Update to live domain when deployed ────────────────────────────────────
 const BASE_URL = "https://iwin-sa.com";
 
 const dmSans = DM_Sans({
@@ -47,9 +46,9 @@ export const metadata: Metadata = {
       "A Saudi creative company specializing in artistic production, visual content, creative campaigns, and talent acquisition — headquartered in Riyadh.",
     images: [
       {
-        url: "/logo.png",
-        width: 800,
-        height: 600,
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
         alt: "WIN Solutions — Creative Marketing & Production",
       },
     ],
@@ -61,7 +60,7 @@ export const metadata: Metadata = {
     title: "WIN Solutions | Creative Marketing & Production in Riyadh",
     description:
       "A Saudi creative company specializing in artistic production, visual content, creative campaigns, and talent acquisition — headquartered in Riyadh.",
-    images: ["/logo.png"],
+    images: ["/og-image.png"],
   },
 
   alternates: {
