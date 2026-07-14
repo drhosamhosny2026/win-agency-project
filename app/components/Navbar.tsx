@@ -162,10 +162,10 @@ export default function Navbar() {
                 key={href}
                 type="button"
                 onClick={() => handleLink(href)}
-                className={`relative pb-1 cursor-pointer transition-[color,opacity] duration-500 ease-out font-latin ${
+                className={`relative pb-1 cursor-pointer transition-[color,opacity] duration-500 ease-out ${
                   isActive
                     ? "text-[#c9a96e]"
-                    : "text-[#f5f2ed]/50 hover:text-[#f5f2ed] hover:opacity-100"
+                    : "text-[#ADABA7] hover:text-[#f5f2ed] hover:opacity-100"
                 }`}
               >
                 {t("nav", key)}
@@ -237,8 +237,8 @@ export default function Navbar() {
                 <button
                   type="button"
                   onClick={() => handleLink(href)}
-                  className={`w-full text-start font-black leading-none text-[clamp(3rem,12vw,6rem)] cursor-pointer transition-[color,opacity] duration-500 ease-out font-latin ${
-                    isActive ? "text-[#c9a96e]" : "text-[#f5f2ed]/70 hover:text-[#f5f2ed]"
+                  className={`w-full text-start font-black leading-none text-[clamp(3rem,12vw,6rem)] cursor-pointer transition-[color,opacity] duration-500 ease-out ${
+                    isActive ? "text-[#c9a96e]" : "text-[#ADABA7] hover:text-[#f5f2ed]"
                   }`}
                 >
                   {t("nav", key)}

@@ -51,6 +51,17 @@ h6 {
 [dir="rtl"] h6 {
   font-family: var(--font-rakik, sans-serif);
   letter-spacing: 0;
+  /* Arabic glyph ink extent (ascenders/dots/stacked diacritics) exceeds the
+     line-height:1 that Tailwind text-5xl/7xl set — 1.35 prevents line overlap */
+  line-height: 1.35;
+  /* Rakik's heaviest face is 700 — stops browsers synthesizing faux-bold 900 */
+  font-weight: 700;
+}
+
+/* RTL: letter-spacing severs Arabic cursive joins on Safari/older engines.
+   .font-latin elements are Latin-only and keep their tracking. */
+[dir="rtl"] :not(.font-latin) {
+  letter-spacing: normal !important;
 }
 
 /* Utility: force DM Sans regardless of dir (WIN, KAFD, brand names) */
