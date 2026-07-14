@@ -22,13 +22,11 @@ interface LanguageContextValue {
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("en");
-
-  // Hydrate from localStorage once on mount
-  useEffect(() => {
+  const [lang, setLangState] = useState<Lang>(() => {
+    if (typeof window === "undefined") return "en";
     const stored = localStorage.getItem("lang");
-    if (stored === "ar" || stored === "en") setLangState(stored);
-  }, []);
+    return stored === "ar" || stored === "en" ? stored : "en";
+  });
 
   // Sync document attributes + localStorage whenever lang changes
   useEffect(() => {

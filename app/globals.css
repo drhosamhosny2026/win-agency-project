@@ -11,6 +11,17 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Offset in-page anchor jumps so section headings clear the fixed navbar */
+#home,
+#services,
+#works,
+#about,
+#vision,
+#award,
+#contact {
+  scroll-margin-top: 96px;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -72,11 +83,6 @@ h6 {
   border-radius: 2px;
 }
 
-/* —— Hero video panel —— */
-.hero-video-panel {
-  box-shadow: 0 40px 100px rgba(0,0,0,0.7), 0 0 0 1px rgba(201,169,110,0.12);
-}
-
 /* —— Works featured card —— */
 .works-featured-card {
   box-shadow: 0 24px 60px rgba(0,0,0,0.6);
@@ -109,18 +115,6 @@ h6 {
 /* —— Text marquee belt — pause on hover —— */
 .text-marquee-viewport:hover .text-marquee-track {
   animation-play-state: paused;
-}
-
-/* —— Video modal fade mask — 4-edge gradient vignette —— */
-.video-fade-mask {
-  -webkit-mask-image:
-    linear-gradient(to right,  transparent 0%, black 7%, black 93%, transparent 100%),
-    linear-gradient(to bottom, transparent 0%, black 7%, black 93%, transparent 100%);
-  -webkit-mask-composite: source-in;
-  mask-image:
-    linear-gradient(to right,  transparent 0%, black 7%, black 93%, transparent 100%),
-    linear-gradient(to bottom, transparent 0%, black 7%, black 93%, transparent 100%);
-  mask-composite: intersect;
 }
 
 /* —— Mobile nav overlay items (staggered entrance) ————————————————————— */
@@ -198,10 +192,5 @@ h6 {
   /* hide the 3 duplicate text sets */
   .text-marquee-track > div:not(:first-child) {
     display: none;
-  }
-
-  .video-modal-overlay,
-  .video-modal-content {
-    animation: none;
   }
 }

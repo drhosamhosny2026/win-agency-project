@@ -85,7 +85,7 @@ export function useReveal({
     }, sectionRef.current!);
 
     return () => {
-      splits.forEach((s) => { try { s.revert(); } catch (_) {} });
+      splits.forEach((s) => { try { s.revert(); } catch {} });
       ctx.revert();
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps

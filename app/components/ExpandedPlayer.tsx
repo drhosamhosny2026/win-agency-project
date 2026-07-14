@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { lenisStop, lenisStart } from "@/lib/lenis-scroll";
 
@@ -29,7 +30,7 @@ export default function ExpandedPlayer({
   useEffect(() => { onCloseRef.current = onClose; }, [onClose]);
 
   // Collapse animation — called from both button and ESC key
-  const collapse = () => {
+  const collapse = useCallback(() => {
     if (isClosingRef.current) return;
     isClosingRef.current = true;
 
@@ -50,7 +51,7 @@ export default function ExpandedPlayer({
         onCloseRef.current();
       },
     });
-  };
+  }, [originRect]);
 
   // Expand on mount
   useEffect(() => {
@@ -97,7 +98,8 @@ export default function ExpandedPlayer({
       lenisStart();
       document.body.style.overflow = "";
     };
-  }, []); // intentionally runs once on mount only
+    // originRect/collapse are stable for the player's lifetime, so this runs once on mount
+  }, [collapse, originRect]);
 
   return (
     // position + size are controlled entirely by GSAP
@@ -107,10 +109,13 @@ export default function ExpandedPlayer({
     >
       {/* Thumbnail — shown during expand / collapse animation */}
       {!showIframe && (
-        <img
+        <Image
           src={coverSrc}
           alt={title}
-          className="absolute inset-0 w-full h-full object-cover"
+          fill
+          sizes="100vw"
+          priority
+          className="object-cover"
         />
       )}
 
