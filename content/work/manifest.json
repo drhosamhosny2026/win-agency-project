@@ -35,12 +35,11 @@
     },
     {
       "id": "work-kafd-concert",
-      "title": { "en": "Concert", "ar": null },
-      "displayTitle": { "en": "KAFD Concert", "ar": null },
-      "clientId": "kafd",
-      "category": "event",
-      "categories": ["event"],
-      "serviceTags": ["event-management"],
+      "title": { "en": "Saudi National Day", "ar": null },
+      "clientId": "half-million",
+      "category": "campaign",
+      "categories": ["campaign", "marketing"],
+      "serviceTags": ["marketing-creativity"],
       "pdfPages": [14, 15, 16],
       "slides": [
         { "pdfPage": 14, "assetKey": "slide-01" },
