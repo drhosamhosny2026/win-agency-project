@@ -90,8 +90,8 @@ export const translations = {
     statServices: { ar: "خدماتنا",      en: "Services"  },
     statBase:     { ar: "الرياض",       en: "Riyadh"    },
     body: {
-      ar: "وكالة سعودية مقرّها العاصمة ومدينة الأحلام الرياض. انطلقنا في عام 2023 بطموح كبير، وبنينا الوكالة على مبدأ راسخ: الربح للجميع؛ العميل، والشركة، والموظف. بدأت رحلتنا في مجال الإنتاج الفني والمرئي، ثم توسّعنا إلى التسويق الإبداعي، واستقطاب المؤثرين، وشراكات المواهب الإستراتيجية المحلية والعالمية، لنثبت أن إبداع WIN يتجاوز المألوف، مستلهمًا من الثقافة السعودية بروح عصرية تعيد تعريف الممكن.",
-      en: "WIN is a Saudi-based agency headquartered in Riyadh, the capital and city of dreams. Founded in 2023 with an ambitious vision, we built the agency on a strong principle: creating value for everyone — the client, the company, and the team. Our journey began in artistic and visual production, before expanding into creative marketing, influencer sourcing, and strategic talent partnerships, proving that WIN's creativity goes beyond the ordinary — inspired by Saudi culture with a modern spirit that redefines what's possible.",
+      ar: "كيان إبداعي سعودي مقرّه العاصمة ومدينة الأحلام الرياض. انطلقنا في عام 2023 بطموح كبير، وبنينا WIN Solutions على مبدأ راسخ: الربح للجميع؛ العميل، والشركة، والموظف. بدأت رحلتنا في مجال الإنتاج الفني والمرئي، ثم توسّعنا إلى التسويق الإبداعي، واستقطاب المؤثرين، وشراكات المواهب الإستراتيجية المحلية والعالمية، لنثبت أن إبداع WIN يتجاوز المألوف، مستلهمًا من الثقافة السعودية بروح عصرية تعيد تعريف الممكن.",
+      en: "WIN is a Saudi-based creative house headquartered in Riyadh, the capital and city of dreams. Founded in 2023 with an ambitious vision, we built WIN Solutions on a strong principle: creating value for everyone — the client, the company, and the team. Our journey began in artistic and visual production, before expanding into creative marketing, influencer sourcing, and strategic talent partnerships, proving that WIN's creativity goes beyond the ordinary — inspired by Saudi culture with a modern spirit that redefines what's possible.",
     },
   },
 
