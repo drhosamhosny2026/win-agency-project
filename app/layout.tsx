@@ -6,7 +6,7 @@ import SmoothScroll from "./components/SmoothScroll";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { Analytics } from "@vercel/analytics/next";
 
-const BASE_URL = "https://win-solutions.org";
+import { BASE_URL } from "@/lib/site";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
