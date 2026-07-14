@@ -40,7 +40,7 @@
     {
       "id": "rega",
       "name": "Ministry of Environment",
-      "logo": "/assets/clients/moewaa/mewa-logo.svg",
+      "logo": "/assets/clients/moewaa/logo.svg",
       "format": "svg",
       "width": 313,
       "height": 80,
@@ -153,15 +153,6 @@
       "height": 80,
       "intrinsicWidth": 4167,
       "intrinsicHeight": 4167
-    },
-    {
-      "id": "mdlbeast",
-      "logo": "/assets/clients/mdlbeast/logo.png",
-      "format": "png",
-      "width": 250,
-      "height": 80,
-      "intrinsicWidth": 359,
-      "intrinsicHeight": 115
     }
   ]
 }

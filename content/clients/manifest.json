@@ -57,8 +57,8 @@
       "id": "rega",
       "name": "Ministry of Environment",
       "slug": "rega",
-      "logo": "/assets/clients/moewaa/mewa-logo.svg",
-      "logoFallback": "/assets/clients/moewaa/mewa-logo.svg",
+      "logo": "/assets/clients/moewaa/logo.svg",
+      "logoFallback": "/assets/clients/moewaa/logo.svg",
       "sources": ["clients-slide", "portfolio"],
       "pdfPages": [9],
       "portfolioWorkIds": ["work-saudi-national-day-rega"],
@@ -186,17 +186,6 @@
       "sources": ["clients-slide"],
       "pdfPages": [9],
       "logoWidth": 233,
-      "logoHeight": 80
-    },
-    {
-      "id": "mdlbeast",
-      "name": "MDLBEAST",
-      "slug": "mdlbeast",
-      "logo": "/assets/clients/mdlbeast/logo.png",
-      "logoFallback": "/assets/clients/mdlbeast/logo.png",
-      "sources": ["clients-slide"],
-      "pdfPages": [9],
-      "logoWidth": 250,
       "logoHeight": 80
     }
   ]

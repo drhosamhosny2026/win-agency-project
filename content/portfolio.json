@@ -22,7 +22,7 @@
     "items": [
       { "id": "kafd",          "name": "KAFD",                       "logo": "/assets/clients/kafd/logo.png",          "width": 40,  "height": 80 },
       { "id": "half-million",  "name": "Half Million",               "logo": "/assets/clients/half-million/logo.png",  "width": 175, "height": 80 },
-      { "id": "rega",          "name": "Ministry of Environment",  "logo": "/assets/clients/moewaa/mewa-logo.svg",   "width": 313, "height": 80 },
+      { "id": "rega",          "name": "Ministry of Environment",  "logo": "/assets/clients/moewaa/logo.svg",   "width": 313, "height": 80 },
       { "id": "sta",           "name": "Saudi Tourism Authority",    "logo": "/assets/clients/sta/logo.png",           "width": 285, "height": 80 },
       { "id": "ahli",          "name": "Al Ahli Saudi Club",         "logo": "/assets/clients/ahli/logo.webp",         "width": 80,  "height": 80 },
       { "id": "mbc",           "name": "MBC",                        "logo": "/assets/clients/mbc/logo.svg",           "width": 190, "height": 80 },
