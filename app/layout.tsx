@@ -46,10 +46,12 @@ export const metadata: Metadata = {
       "A Saudi creative company specializing in artistic production, visual content, creative campaigns, and talent acquisition — headquartered in Riyadh.",
     images: [
       {
-        url: "/og-image.png",
+        url: `${BASE_URL}/og-image.png`,
+        secureUrl: `${BASE_URL}/og-image.png`,
         width: 1200,
         height: 630,
         alt: "WIN Solutions — Creative Marketing & Production",
+        type: "image/png",
       },
     ],
     locale: "en_US",
