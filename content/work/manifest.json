@@ -89,10 +89,10 @@
     },
     {
       "id": "work-advertising-campaign",
-      "title": { "en": "Advertising Campaign", "ar": null },
+      "title": { "en": "LLE Podcast", "ar": null },
       "clientId": null,
-      "category": "marketing",
-      "categories": ["marketing", "campaign"],
+      "category": "sponsorship",
+      "categories": ["sponsorship"],
       "serviceTags": ["marketing-creativity"],
       "pdfPages": [21, 22, 23],
       "slides": [
