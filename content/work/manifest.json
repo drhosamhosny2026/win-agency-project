@@ -8,7 +8,6 @@
     "work-saudi-national-day-half-million",
     "work-kafd-concert",
     "work-eid-song",
-    "work-sonic-branding-half-million",
     "work-saudi-national-day-rega",
     "work-saudi-national-day-mos",
     "work-advertising-campaign",
@@ -64,24 +63,11 @@
       "assetsPath": "/assets/projects/eid-song"
     },
     {
-      "id": "work-sonic-branding-half-million",
+      "id": "work-saudi-national-day-rega",
       "title": { "en": "Sonic Branding", "ar": null },
       "clientId": "half-million",
       "category": "music",
       "categories": ["music", "marketing"],
-      "serviceTags": ["music-production", "marketing-creativity"],
-      "pdfPages": [18],
-      "slides": [{ "pdfPage": 18, "assetKey": "slide-01" }],
-      "mediaIds": ["yt-sonic-branding-half-million"],
-      "featured": true,
-      "assetsPath": "/assets/projects/sonic-branding-half-million"
-    },
-    {
-      "id": "work-saudi-national-day-rega",
-      "title": { "en": "Saudi National Day", "ar": null },
-      "clientId": "rega",
-      "category": "campaign",
-      "categories": ["campaign", "marketing"],
       "serviceTags": ["marketing-creativity"],
       "pdfPages": [19],
       "slides": [{ "pdfPage": 19, "assetKey": "slide-01" }],

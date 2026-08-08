@@ -31,15 +31,6 @@
       "assignedTo": ["work-eid-song"]
     },
     {
-      "id": "yt-sonic-branding-half-million",
-      "platform": "youtube",
-      "url": "https://www.youtube.com/watch?v=gRuc1m90jck",
-      "youtubeId": "gRuc1m90jck",
-      "label": "Sonic Branding — Half Million",
-      "pdfPage": 18,
-      "assignedTo": ["work-sonic-branding-half-million"]
-    },
-    {
       "id": "yt-snd-rega",
       "platform": "youtube",
       "url": "https://www.youtube.com/watch?v=HKhbA936FcY",
@@ -97,7 +88,6 @@
   "youtubeAll": [
     "https://www.youtube.com/watch?v=r55fNz-73O4",
     "https://www.youtube.com/watch?v=y3DmY6bIu4w",
-    "https://www.youtube.com/watch?v=gRuc1m90jck",
     "https://www.youtube.com/watch?v=HKhbA936FcY",
     "https://www.youtube.com/watch?v=9z2KLeBiloQ",
     "https://www.youtube.com/watch?v=OelZLHpcCJA"
