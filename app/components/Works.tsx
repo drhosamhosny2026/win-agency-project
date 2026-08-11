@@ -112,7 +112,8 @@ export default function Works() {
     } else if (
       primaryMedia?.platform === "instagram" ||
       primaryMedia?.platform === "x"          ||
-      primaryMedia?.platform === "linkedin"
+      primaryMedia?.platform === "linkedin"   ||
+      primaryMedia?.platform === "tiktok"
     ) {
       mediaUrl = primaryMedia.url;
     }
@@ -130,6 +131,7 @@ export default function Works() {
       primaryMedia?.platform === "instagram" ? "Instagram"
       : primaryMedia?.platform === "x"       ? "X (Twitter)"
       : primaryMedia?.platform === "linkedin" ? "LinkedIn"
+      : primaryMedia?.platform === "tiktok"   ? "TikTok"
       : null;
 
     if (isFeatured) {
