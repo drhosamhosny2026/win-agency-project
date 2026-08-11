@@ -187,6 +187,13 @@
       "pdfPages": [9],
       "logoWidth": 233,
       "logoHeight": 80
+    },
+    {
+      "id": "madghout-baytna",
+      "name": "Madghout Baytna",
+      "slug": "madghout-baytna",
+      "sources": ["portfolio"],
+      "portfolioWorkIds": ["work-madghout-baytna"]
     }
   ]
 }

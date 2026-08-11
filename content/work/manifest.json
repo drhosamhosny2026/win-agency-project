@@ -21,7 +21,7 @@
     {
       "id": "work-madghout-baytna",
       "title": { "en": "Creative Campaign", "ar": null },
-      "clientId": null,
+      "clientId": "madghout-baytna",
       "category": "campaign",
       "categories": ["campaign"],
       "mediaIds": ["ig-madghout-baytna"],

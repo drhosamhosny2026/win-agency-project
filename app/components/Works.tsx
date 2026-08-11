@@ -176,9 +176,11 @@ export default function Works() {
                 {work.categories.join(" · ")}
               </p>
             </div>
-            {client && (
+            {(client || (platformLabel && mediaUrl)) && (
               <div className="text-start md:text-end">
-                <p className="text-base md:text-lg text-[#f5f2ed]/45 mb-2 font-latin">{client.name}</p>
+                {client && (
+                  <p className="text-base md:text-lg text-[#f5f2ed]/45 mb-2 font-latin">{client.name}</p>
+                )}
                 {platformLabel && mediaUrl && (
                   <a href={mediaUrl} target="_blank" rel="noopener noreferrer"
                     className="inline-block text-xs md:text-sm font-medium text-[#c9a96e] hover:text-[#f5f2ed] transition-colors duration-300">
