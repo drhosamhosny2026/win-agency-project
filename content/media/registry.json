@@ -4,6 +4,30 @@
   "extractedAt": "2026-05-28",
   "items": [
     {
+      "id": "ig-madghout-baytna",
+      "platform": "instagram",
+      "url": "https://www.instagram.com/reel/DZaT2KHMOvJ/",
+      "urlCanonical": "https://www.instagram.com/reel/DZaT2KHMOvJ/?igsh=NnVkMDB5MDBhOWs3",
+      "label": "Madghout Baytna — Creative Campaign",
+      "assignedTo": ["work-madghout-baytna"]
+    },
+    {
+      "id": "ig-cardial-advertising-faces-1",
+      "platform": "instagram",
+      "url": "https://www.instagram.com/reel/DYOoyfcIjF9/",
+      "urlCanonical": "https://www.instagram.com/reel/DYOoyfcIjF9/?igsh=MnN5Z3NjcWZxb3Jp",
+      "label": "Cardial — Advertising Faces Campaign 1",
+      "assignedTo": ["work-cardial-advertising-faces-1"]
+    },
+    {
+      "id": "ig-cardial-advertising-faces-2",
+      "platform": "instagram",
+      "url": "https://www.instagram.com/reel/DTzoW79AUad/",
+      "urlCanonical": "https://www.instagram.com/reel/DTzoW79AUad/?igsh=bXN0aHU5djI5dWFr",
+      "label": "Cardial — Advertising Faces Campaign 2 (Infinity by Cardial)",
+      "assignedTo": ["work-cardial-advertising-faces-2"]
+    },
+    {
       "id": "yt-snd-half-million",
       "platform": "youtube",
       "url": "https://www.youtube.com/watch?v=r55fNz-73O4",
@@ -93,6 +117,9 @@
     "https://www.youtube.com/watch?v=OelZLHpcCJA"
   ],
   "socialAll": [
+    "https://www.instagram.com/reel/DZaT2KHMOvJ/",
+    "https://www.instagram.com/reel/DYOoyfcIjF9/",
+    "https://www.instagram.com/reel/DTzoW79AUad/",
     "https://www.instagram.com/reel/DFjAEbHoVrE/",
     "https://x.com/mosgovsa/status/2024559617225691574",
     "https://x.com/gea_sa/status/1942574532939898889",

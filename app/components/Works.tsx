@@ -93,7 +93,10 @@ export default function Works() {
     } else if (
       work.id === "work-eid-song" ||
       work.id === "work-event-gea" ||
-      work.id === "work-event-half-million"
+      work.id === "work-event-half-million" ||
+      work.id === "work-madghout-baytna" ||
+      work.id === "work-cardial-advertising-faces-1" ||
+      work.id === "work-cardial-advertising-faces-2"
     ) {
       cover = `${work.assetsPath}/cover.jpg`;
     } else {

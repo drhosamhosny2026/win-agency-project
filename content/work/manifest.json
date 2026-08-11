@@ -5,6 +5,9 @@
   },
   "pdfPages": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26],
   "displayOrder": [
+    "work-madghout-baytna",
+    "work-cardial-advertising-faces-1",
+    "work-cardial-advertising-faces-2",
     "work-saudi-national-day-half-million",
     "work-kafd-concert",
     "work-eid-song",
@@ -15,6 +18,36 @@
     "work-event-half-million"
   ],
   "items": [
+    {
+      "id": "work-madghout-baytna",
+      "title": { "en": "Creative Campaign", "ar": null },
+      "clientId": null,
+      "category": "campaign",
+      "categories": ["campaign"],
+      "mediaIds": ["ig-madghout-baytna"],
+      "featured": true,
+      "assetsPath": "/assets/projects/madghout-baytna"
+    },
+    {
+      "id": "work-cardial-advertising-faces-1",
+      "title": { "en": "Advertising Faces Campaign", "ar": null },
+      "clientId": "cardial",
+      "category": "marketing",
+      "categories": ["marketing"],
+      "mediaIds": ["ig-cardial-advertising-faces-1"],
+      "featured": true,
+      "assetsPath": "/assets/projects/cardial-advertising-faces-1"
+    },
+    {
+      "id": "work-cardial-advertising-faces-2",
+      "title": { "en": "Advertising Faces Campaign", "ar": null },
+      "clientId": "cardial",
+      "category": "marketing",
+      "categories": ["marketing"],
+      "mediaIds": ["ig-cardial-advertising-faces-2"],
+      "featured": true,
+      "assetsPath": "/assets/projects/cardial-advertising-faces-2"
+    },
     {
       "id": "work-saudi-national-day-half-million",
       "title": { "en": "Saudi National Day", "ar": null },
