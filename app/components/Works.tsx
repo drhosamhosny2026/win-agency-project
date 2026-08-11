@@ -95,6 +95,7 @@ export default function Works() {
       work.id === "work-event-gea" ||
       work.id === "work-event-half-million" ||
       work.id === "work-madghout-baytna" ||
+      work.id === "work-madghout-baytna-2" ||
       work.id === "work-cardial-advertising-faces-1" ||
       work.id === "work-cardial-advertising-faces-2"
     ) {

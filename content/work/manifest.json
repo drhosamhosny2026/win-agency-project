@@ -6,6 +6,7 @@
   "pdfPages": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26],
   "displayOrder": [
     "work-madghout-baytna",
+    "work-madghout-baytna-2",
     "work-cardial-advertising-faces-1",
     "work-cardial-advertising-faces-2",
     "work-saudi-national-day-half-million",
@@ -27,6 +28,16 @@
       "mediaIds": ["tiktok-madghout-baytna"],
       "featured": true,
       "assetsPath": "/assets/projects/madghout-baytna"
+    },
+    {
+      "id": "work-madghout-baytna-2",
+      "title": { "en": "Creative Campaign", "ar": null },
+      "clientId": "madghout-baytna",
+      "category": "campaign",
+      "categories": ["campaign"],
+      "mediaIds": ["ig-madghout-baytna-2"],
+      "featured": true,
+      "assetsPath": "/assets/projects/madghout-baytna-2"
     },
     {
       "id": "work-cardial-advertising-faces-1",
