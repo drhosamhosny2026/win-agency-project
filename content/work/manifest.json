@@ -121,7 +121,7 @@
     {
       "id": "work-saudi-national-day-mos",
       "title": { "en": "Saudi National Day", "ar": null },
-      "clientId": "mos",
+      "clientId": "real-estate-registry",
       "category": "campaign",
       "categories": ["campaign", "marketing"],
       "serviceTags": ["marketing-creativity"],

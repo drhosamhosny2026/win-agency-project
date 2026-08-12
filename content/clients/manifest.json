@@ -104,9 +104,8 @@
       "slug": "mos",
       "logo": "/assets/clients/mos/logo.svg",
       "logoFallback": "/assets/clients/mos/logo.svg",
-      "sources": ["clients-slide", "portfolio"],
+      "sources": ["clients-slide"],
       "pdfPages": [9],
-      "portfolioWorkIds": ["work-saudi-national-day-mos"],
       "logoWidth": 252,
       "logoHeight": 80
     },
@@ -194,6 +193,13 @@
       "slug": "madghout-baytna",
       "sources": ["portfolio"],
       "portfolioWorkIds": ["work-madghout-baytna", "work-madghout-baytna-2"]
+    },
+    {
+      "id": "real-estate-registry",
+      "name": "Real Estate Registry",
+      "slug": "real-estate-registry",
+      "sources": ["portfolio"],
+      "portfolioWorkIds": ["work-saudi-national-day-mos"]
     }
   ]
 }
