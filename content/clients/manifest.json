@@ -196,7 +196,7 @@
     },
     {
       "id": "real-estate-registry",
-      "name": "Real Estate Registry",
+      "name": "RER",
       "slug": "real-estate-registry",
       "sources": ["portfolio"],
       "portfolioWorkIds": ["work-saudi-national-day-mos"]
