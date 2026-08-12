@@ -16,7 +16,8 @@
     "work-saudi-national-day-mos",
     "work-advertising-campaign",
     "work-event-gea",
-    "work-event-half-million"
+    "work-event-half-million",
+    "work-saudi-founding-day-mos"
   ],
   "items": [
     {
@@ -175,6 +176,16 @@
       "mediaIds": ["linkedin-event-half-million"],
       "featured": true,
       "assetsPath": "/assets/projects/event-half-million"
+    },
+    {
+      "id": "work-saudi-founding-day-mos",
+      "title": { "en": "Saudi Founding Day", "ar": null },
+      "clientId": "mos",
+      "category": "campaign",
+      "categories": ["campaign", "marketing"],
+      "mediaIds": ["x-saudi-founding-day-mos"],
+      "featured": true,
+      "assetsPath": "/assets/projects/saudi-founding-day-mos"
     }
   ]
 }

@@ -104,8 +104,9 @@
       "slug": "mos",
       "logo": "/assets/clients/mos/logo.svg",
       "logoFallback": "/assets/clients/mos/logo.svg",
-      "sources": ["clients-slide"],
+      "sources": ["clients-slide", "portfolio"],
       "pdfPages": [9],
+      "portfolioWorkIds": ["work-saudi-founding-day-mos"],
       "logoWidth": 252,
       "logoHeight": 80
     },
